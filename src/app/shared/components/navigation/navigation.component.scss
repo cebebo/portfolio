@@ -1,0 +1,32 @@
+@import './../../../../styles.scss';
+
+header {
+    position: fixed;
+    background-color: $mainColor;
+    width: 100%;
+    height: 100px;
+    z-index: 10;
+    @include dFlex();
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+.navigationBar {
+    padding-left: 37px;
+    padding-right: 37px;
+    max-width: 1440px;
+    width: 100%;
+    @include dFlex($jc: space-between);
+}
+
+.navOptions {
+    @include fontColor($weight: 400, $size: 23px, $liHi: 27.6px);
+    @include dFlex($g: 29px);
+    color: white;
+    cursor: pointer;
+}
+
+h2 {
+    font-family: 'Poppins';
+}

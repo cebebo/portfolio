@@ -1,0 +1,57 @@
+@import './../../../styles.scss';
+
+
+.aboutMeContent {
+    width: 100%;
+    max-width: 1440px;
+    margin-top: -550px;
+    z-index: 4;
+    @include dFlex();
+}
+
+.leftSide {
+    @include freePlacing($t:180px);
+}
+
+.rightSide {
+    @include freePlacing($t:500px);
+    @include dFlex($fd:column);
+    >img {
+        height: 450px;
+        border-radius: 50%;
+        border: 4px solid $colorGreen;
+        z-index: 1;
+    }
+}
+
+.greenLine {
+    width: 800px;
+    height: 5px;
+    background-color: $colorGreen;
+    margin-right: 32px;
+    z-index: 4;
+    @include freePlacing($t:-285px, $l:1120px);
+}
+
+.purpleDot {
+    @include freePlacing($t:-650px, $l:330px);
+    height: 550px;
+}
+
+.topics {
+    margin-top: 24px;
+    @include dFlex();
+    color: white;
+}
+
+.icon {
+    width: 200px;
+    @include dFlex();
+    >img {
+        height: 32px;
+        transition: height .25s ease-in-out;
+        &:hover {
+            height: 48px;
+        }
+    }
+}

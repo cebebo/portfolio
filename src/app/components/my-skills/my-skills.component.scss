@@ -1,0 +1,12 @@
+@import './../../../styles.scss';
+
+.mySkillsContent {
+    width: 100%;
+    max-width: 1440px;
+    margin-top: -1100px;
+    @include dFlex();
+}
+
+.leftSide {
+    width: 60%;
+}

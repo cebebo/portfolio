@@ -1,0 +1,13 @@
+<div class="containerBackground">    
+    <div class="mySkillsContent">
+        <div class="leftSide">
+            <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos explicabo ipsa distinctio at, quidem vero eligendi, excepturi est aliquid, id deserunt tempora eaque? Quas consequuntur iure atque fuga ab tempora?</span>
+            @for(icon of skillsLabList; track icon.name) {
+                <app-skill-icons [skillsLab]="icon"></app-skill-icons>
+            }
+        </div>
+        <div class="rightSide">
+            <span class="topTitle">My skills</span>
+        </div>
+    </div>
+</div>
