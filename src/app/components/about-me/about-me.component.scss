@@ -10,12 +10,16 @@
 }
 
 .leftSide {
-    @include freePlacing($t:180px);
+    @include freePlacing($t: 180px, $l: 48px);
+    >span, div {
+        @include incoming($name: fade-in-text);
+    }
 }
 
 .rightSide {
-    @include freePlacing($t:500px);
-    @include dFlex($fd:column);
+    @include freePlacing($t: 500px, $l: 500px);
+    @include dFlex($fd: column);
+    @include incoming($name: fade-in-photo, $start: 250px, $end: 450px);
     >img {
         height: 450px;
         border-radius: 50%;
@@ -24,32 +28,48 @@
     }
 }
 
+@keyframes fade-in-photo {
+    @include keyframesValue($top: 500px, $left: 0px);
+}
+
+@keyframes fade-in-line {
+    @include keyframesValue($top: -285px, $left: 1087px);
+}
+
+@keyframes fade-in-text {
+    to {opacity: 1;}
+}
+
 .greenLine {
     width: 800px;
     height: 5px;
     background-color: $colorGreen;
     margin-right: 32px;
     z-index: 4;
-    @include freePlacing($t:-285px, $l:1120px);
+    @include freePlacing($t: -285px, $l: 1587px);
+    @include incoming($name: fade-in-line, $start: 250px, $end: 350px);
 }
 
 .purpleDot {
-    @include freePlacing($t:-650px, $l:330px);
+    @include freePlacing($t: -650px, $l: 330px);
     height: 550px;
 }
 
 .topics {
     margin-top: 24px;
-    @include dFlex();
+    width: 95%;
+    @include dFlex($jc: flex-start);
     color: white;
 }
 
 .icon {
-    width: 200px;
+    padding-right: 32px;
     @include dFlex();
+
     >img {
         height: 32px;
         transition: height .25s ease-in-out;
+
         &:hover {
             height: 48px;
         }

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { SkillIconsComponent } from './skill-icons/skill-icons.component';
 import { Skillsdataservice } from './skill-icons/skillsdata.service';
 import { CommonModule } from '@angular/common';
@@ -9,54 +9,33 @@ import { CommonModule } from '@angular/common';
   imports: [SkillIconsComponent, CommonModule],
   templateUrl: './my-skills.component.html',
   styleUrl: './my-skills.component.scss'
-})
+}) 
 export class MySkillsComponent {
 
-  // skillsDataList = inject(Skillsdataservice);
-  skillsLabList = [
+  skillsDataList = inject(Skillsdataservice);
+
+  @Input() language = 'eng';
+
+  contentText = [
     {
-      name: "HTML",
-      img: "icon-html.png"
+      eng: 'My skills',
+      ger: 'Fähigkeiten'
     },
     {
-      name: "CSS",
-      img: "icon-css.png"
+      eng: 'I have gained experience in building projects with different frontend technologies and concepts.',
+      ger: 'Ich habe Erfahrungen beim Aufbau von Projekten mit unterschiedlichen Frontend-Technologien und -Konzepten gesammelt.'
     },
     {
-      name: "JavaScript",
-      img: "icon-js.png"
+      eng: "Looking for another skill?",
+      ger: 'Suchen Sie nach einer anderen Fähigkeit?'
     },
     {
-      name: "TypeScript",
-      img: "icon-ts.png"
+      eng: "Feel free to contact me. I look forward to expanding on my previous knowledge.",
+      ger: 'Kontaktieren Sie mich gerne. Ich freue mich darauf, mein bisheriges Wissen zu erweitern.'
     },
     {
-      name: "Angular",
-      img: "icon-angular.png"
-    },
-    {
-      name: "Firebase",
-      img: "icon-firebase.png"
-    },
-    {
-      name: "GIT",
-      img: "icon-git.png"
-    },
-    {
-      name: "Rest-Api",
-      img: "icon-api.png"
-    },
-    {
-      name: "Scrum",
-      img: "icon-scrum.png"
-    },
-    {
-      name: "Material Design",
-      img: "icon-matdes.png"
-    },
-    {
-      name: "Continually learning",
-      img: "icon-learn.png"
+      eng: "Get in touch",
+      ger: 'Kontakt aufnehmen'
     }
   ];
 

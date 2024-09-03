@@ -1,10 +1,22 @@
 <header>
     <div class="navigationBar">
-        <img style="height: 32px;" src="./../../../../assets/img/title.png">
+        <a href="#top"><img style="height: 32px;" src="./../../../../assets/img/title.png"></a>
         <div class="navOptions">
-            <a href="#aboutMe"><span class="navLink">About me</span></a>
-            <a href="#mySkills"><span class="navLink">Skills</span></a>
-            <a href="#aboutMe"><span class="navLink">Portfolio</span></a>
+            <div class="flags" (click)="changeLanguage()">
+                <img class="eng" [ngClass]="{'primary': language == 'eng'}" src="./../../../../assets/img/lang-eng.png">
+                <img class="ger" [ngClass]="{'primary': language == 'ger'}" src="./../../../../assets/img/lang-ger.png">
+            </div>
+            <div class="buttons">
+            @if(language == 'eng'){
+                <a href="#aboutMe"><span class="navLink">{{menuText[0].eng}}</span></a>
+                <a href="#mySkills"><span class="navLink">{{menuText[1].eng}}</span></a>
+            } @else {
+                <a href="#aboutMe"><span class="navLink">{{menuText[0].ger}}</span></a>
+                <a href="#mySkills"><span class="navLink">{{menuText[1].ger}}</span></a>
+            }
+            <a href="#portfolio"><span class="navLink">Portfolio</span></a>
+        </div>
         </div>
     </div>
+    <a href="#top"><div class="backUp">&uarr;</div></a>
 </header>

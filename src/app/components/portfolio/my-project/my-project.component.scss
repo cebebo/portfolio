@@ -1,0 +1,15 @@
+@import './../../../../styles.scss';
+
+.icons {
+    width: 120px;
+    border-radius: 25px;
+    border: 4px solid $mainColor;
+    transition: border-color .15s ease-in-out;
+    &:hover {
+        border-color: $colorPurple;
+        cursor: pointer;
+    }
+    &:active {
+        border-color: $colorGreen;
+    }
+}

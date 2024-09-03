@@ -5,13 +5,6 @@ h2 {
     margin-block-end: 0;
 }
 
-// .containerBackground {
-//     width: 100%;
-//     height: 100vh;
-//     background-color: $mainColor;
-//     @include dFlex($fd: column);
-// }
-
 #blueBow {
     width: 100%;
     height: 600px;
@@ -68,26 +61,6 @@ h2 {
     line-height: 60px;
 }
 
-button {
-    width: 165px;
-    height: 58px;
-    border-radius: 10px;
-    border: 0;
-    background-color: $colorGreen;
-    @include freePlacing($t:-400px, $l:120px);
-    color: white;
-    transition: width .25s, height .25s, left .25s, background-color .25s ease-in-out;
-    z-index: 3;
-    @include fontColor($weight: 400, $size: 23px, $liHi: 27.6px);
-        &:hover {
-            cursor: pointer;
-            left: 105px;
-            width: 195px;
-            height: 75px;
-            background-color: $colorPurple;
-        }    
-}
-
 .textContainer {
     height: 200px;
 }
@@ -99,27 +72,6 @@ button {
     @include freePlacing($t:-1480px);    
 }
 
-.iconDots {
-    width: 80px;
-    height: 50px;
-    @include dFlex();
-    >img {
-        height: 30px;
-        transition: height .25s, border-bottom .35s, border-top .35s ease-in-out;
-        &:hover {
-            cursor: pointer;
-            height: 40px;
-            border-bottom: solid 2px $colorPurple;
-            border-bottom-left-radius: 20%;
-            border-bottom-right-radius: 80%;
-            border-top: solid 2px $colorGreen;
-            border-top-left-radius: 80%;
-            border-top-right-radius: 20%;
-            padding: 5px;
-        }
-    }
-}
-
 .purpleLine {
     width: 15vw;
     min-width: 200px;
@@ -128,4 +80,15 @@ button {
     margin-right: 32px;
 }
 
+.btnPlace {
+    @include freePlacing($t:-400px, $l:120px);
+    &:hover {
+        left: 110px;
+    }
+}
+
+.resizer {
+    font-size: 42px !important;
+    padding-left: 6px !important;
+}
 

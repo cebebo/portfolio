@@ -1,1 +1,41 @@
-<p>contact works!</p>
+<div class="containerBackground bottom">
+    <div class="purpleLine"></div>
+    <div class="contactContent">
+        @if(language == 'eng'){
+        <span class="topTitle">{{contentText[0].eng}}</span>
+        } @else {
+        <span class="topTitle">{{contentText[0].ger}}</span>
+        }
+        <div class="container">
+            <div class="text">
+                @if (language == 'eng') {
+                    <h2>{{contentText[1].eng}}</h2>
+                    <span>{{contentText[2].eng}}</span>
+                    <span>{{contentText[3].eng}}</span>
+                } @else {
+                    <h2>{{contentText[1].ger}}</h2>
+                    <span>{{contentText[2].ger}}</span>
+                    <span>{{contentText[3].ger}}</span>
+                }
+            </div>
+            <div class="form">
+                <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+                     @if (language == 'eng') {
+                        <input [(ngModel)]="contactData.name" type="text" id="name" name="name" placeholder="{{contentText[4].eng}}" required>
+                        <input [(ngModel)]="contactData.email" type="email" id="email" name="email" placeholder="{{contentText[5].eng}}" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+                        <textarea #message="ngModel" minlength="5" [(ngModel)]="contactData.message" id="message" name="message" placeholder="{{contentText[6].eng}}" required></textarea>
+                        @if (!message.valid && message.touched) {
+                            <span>Please enter a message!</span>
+                        }
+                        <input type="submit" value="{{contentText[8].eng}}">
+                     } @else {
+                        <input [(ngModel)]="contactData.name" type="text" id="name" name="name" placeholder="{{contentText[4].ger}}" required>
+                        <input [(ngModel)]="contactData.email" type="email" id="email" name="email" placeholder="{{contentText[5].ger}}" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+                        <textarea [(ngModel)]="contactData.message" id="message" name="message" placeholder="{{contentText[6].ger}}" required></textarea>
+                        <input type="submit" value="{{contentText[8].ger}}">
+                     }
+                </form>    
+            </div>
+        </div>
+    </div>
+</div>

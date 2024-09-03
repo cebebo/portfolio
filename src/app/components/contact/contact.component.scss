@@ -1,0 +1,69 @@
+@import './../../../styles.scss';
+
+.contactContent {
+    width: 100%;
+    max-width: 1440px;
+    margin-top: -500px;
+    @include dFlex($fd: column);
+}
+
+.purpleLine {
+    width: 1800px;
+    height: 5px;
+    background-color: $colorPurple;
+    margin-right: 32px;
+    z-index: 4;
+    @include freePlacing($t: -450px, $l: -1120px);
+    // @include incoming(fade-in-right, $start: 200px, $end: 450px);
+}
+
+.container {
+    margin-top: 128px;
+    width: 100%;
+    color: white;
+    @include dFlex($jc: space-between, $ai: flex-start);
+
+    >text {
+        @include dFlex($jc: flex-start);
+    }
+}
+
+.text,
+form {
+    @include dFlex($fd: column, $ai: flex-start);
+    width: 50%;
+}
+
+h2 {
+    @include fontColor($weight: 700, $size: 32px, $liHi: 38.4px);
+}
+
+span {
+    @include fontColor($weight: 400, $size: 16px, $liHi: 19.2px);
+    margin-bottom: 16px;
+}
+
+input,
+textarea {
+    width: 617px;
+    border: solid 1px $colorPurple;
+    border-radius: 10px;
+    padding: 15px 25px 15px 25px;
+    background-color: $mainColor;
+    margin-bottom: 20px;
+    transition: border .15s ease-in-out;
+    color: white;
+
+    &:hover {
+        border: solid 1px $colorGreen;
+    }
+}
+
+textarea {
+    resize: vertical;
+    min-height: 200px;
+}
+
+.bottom {
+    height: 50vh !important;
+}

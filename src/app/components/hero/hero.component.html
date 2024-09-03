@@ -1,4 +1,4 @@
-<div class="containerBackground">
+<div id="top" class="containerBackground">
 
     <div class="heroContent">
         <div class="mainPic">
@@ -8,13 +8,25 @@
         </div>
         <div class="textContainer">
             <div class="welcomeText">
-                <h2 id="verticalText">I am</h2>
+                @if(language == 'eng'){
+                    <h2 id="verticalText">{{contentText[0].eng}}</h2>
+                } @else {
+                    <h2 [ngClass]="'resizer'" id="verticalText">{{contentText[0].ger}}</h2>
+                }
                 <div class="nameContainer">
                     <span class="topTitle fontPoppins">Christian Becker</span><br>
-                    <span class="jobTitle">FRONTEND DEVELOPER</span>
+                    @if(language == 'eng'){
+                        <span class="jobTitle">{{contentText[1].eng}}</span>
+                    } @else {
+                        <span class="jobTitle">{{contentText[1].ger}}</span>
+                    }
                 </div>
             </div>
-            <button>Let's talk!</button>
+            @if(language == 'eng'){
+                <a href="#contact"><button class="btnPlace">{{contentText[2].eng}}</button></a>
+            } @else {
+                <a href="#contact"><button class="btnPlace">{{contentText[2].ger}}</button></a>
+            }
         </div>
 
     </div>

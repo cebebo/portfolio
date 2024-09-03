@@ -1,13 +1,37 @@
-<div class="containerBackground">    
+<div class="containerBackground">
     <div class="mySkillsContent">
         <div class="leftSide">
-            <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos explicabo ipsa distinctio at, quidem vero eligendi, excepturi est aliquid, id deserunt tempora eaque? Quas consequuntur iure atque fuga ab tempora?</span>
-            @for(icon of skillsLabList; track icon.name) {
-                <app-skill-icons [skillsLab]="icon"></app-skill-icons>
+            @for(icon of skillsDataList.skillsLabList; track icon.name) {
+            <app-skill-icons [skillsLab]="icon"></app-skill-icons>
             }
         </div>
         <div class="rightSide">
-            <span class="topTitle">My skills</span>
+            @if(language == 'eng'){
+                <span class="topTitle" style="margin-bottom: 64px;">{{contentText[0].eng}}</span>
+            } @else {
+                <span class="topTitle" style="margin-bottom: 64px;">{{contentText[0].ger}}</span>
+            }
+            <div class="text">
+                @if(language == 'eng'){
+                    <span class="lowText">{{contentText[1].eng}}</span>
+                    <h2>{{contentText[2].eng}}</h2>
+                    <span class="lowText">{{contentText[3].eng}}</span>
+                } @else {
+                    <span class="lowText">{{contentText[1].ger}}</span>
+                    <h2>{{contentText[2].ger}}</h2>
+                    <span class="lowText">{{contentText[3].ger}}</span>
+                }
+                
+                <div style="height: 100px;">
+                    @if(language == 'eng'){
+                        <a href="#contact"><button class="btnPlace">{{contentText[4].eng}}</button></a>
+                    } @else {
+                        <a href="#contact"><button class="btnPlace">{{contentText[4].ger}}</button></a>
+                    }
+                </div>
+            </div>
+            <div class="purpleLine">&nbsp;</div>
         </div>
     </div>
 </div>
+<div class="bookmark" id="portfolio"></div>
