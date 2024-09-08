@@ -25,4 +25,35 @@
         transform: translateY(-20px);
         cursor: pointer;
     }
+    >img {
+        height: 60px;
+    }
+}
+
+@media(max-width:800px) {
+    .container {
+        width: 100px;
+        height: 150px;
+    }
+}
+
+@media(max-width:500px) {
+    .iconBox {
+        >img {
+            height: 40px;
+        }
+    }
+}
+
+@media(max-width:350px) {
+    .container {
+        width: 80px;
+        height: 140px;
+    }
+
+    .iconBox {
+        >img {
+            height: 35px;
+        }
+    }
 }

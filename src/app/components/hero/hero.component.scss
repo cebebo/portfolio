@@ -54,6 +54,13 @@ h2 {
     top: -400px;
 }
 
+.backDots {
+    position: relative;
+    left: -60px;
+    top: -70px;
+    width: 750px;
+}
+
 .jobTitle {
     font-weight: 400;
     font-size: 58px;
@@ -92,3 +99,312 @@ h2 {
     padding-left: 6px !important;
 }
 
+.emailAdress {
+    margin-left: 32px;
+    @include fontColor($size:23px, $weight:400, $liHi:27.6px);
+}
+
+@media (max-width: 1400px) {
+    #verticalText {
+        font-size: 54px;
+        padding-left: 10px;
+    }
+
+    .jobTitle {
+        font-size: 64px;
+    }
+
+    .welcomeText {
+        left: -350px;
+        width: 900px;
+    }
+
+    .btnPlace {
+        left: 0;
+        &:hover {left: -7px;}  
+    }
+}
+
+@media (max-width: 1300px) {
+    .overlay {
+        height: 640px;
+    }
+    
+    .welcomeText {
+        left: -250px;
+        width: 600px;
+    }
+
+    .btnPlace {
+        left: 0;
+    }  
+
+    .jobTitle {
+        font-size: 45px;
+    }
+
+    .resizer {
+        font-size: 30px !important;
+        line-height: 45px !important;
+    }
+}
+
+@media (max-width: 1200px) {
+    .welcomeText {
+        left: -280px;
+    }
+
+    .btnPlace {
+        left: -30px;
+        &:hover {left: -37px;}
+    }    
+}
+
+@media (max-width: 1100px) {
+    #verticalText {
+        font-size: 40px;
+        padding-left: 2px;
+    }
+
+    .jobTitle {
+        font-size: 45px;
+    }
+
+    .welcomeText {
+        left: -380px;
+    }
+
+    .btnPlace {
+        left: -140px;
+        &:hover {left: -147px;}
+    }
+}
+
+@media (max-width:1000px) {
+    .heroContent {
+        @include dFlex($fd:column, $jc:center, $ai:center);
+        width: 100%;
+        margin-top: 1400px;
+    }
+
+    .mainPic {
+        position: relative;
+        left: 0;
+        top: 600px;        
+    }
+
+    .overlay {
+        position: absolute;
+        height: 800px;
+    }
+
+    #blueBow {
+        top: -800px;
+    }
+
+    .backDots {
+        position: relative;
+        left: -25px;
+        width: 900px;
+        top: -750px;
+    }
+
+    .welcomeText {
+        left: -10px;
+        z-index:3;
+        top: 150px;
+    }
+
+    .btnPlace {
+        @include freePlacing($t:-170px, $l:220px);
+        &:hover {left: 212px;}
+    }
+
+    .socialIcons {
+        top: -800px;
+        left: -50px;
+    }
+    
+}
+
+@media (max-width:825px) {
+    .emailAdress {
+        display: none;
+    }
+}
+
+@media (max-width:800px) {
+    .mainPic {
+        top: 600px;        
+    }
+    .socialIcons {
+        top: -750px;
+    }
+}
+
+@media (max-width:700px) {
+    .mainPic {
+        top: 550px;        
+    }
+
+    .welcomeText {
+        left: -10px;
+        z-index:3;
+        top: -50px;
+    }
+
+    .overlay {
+        height: 650px;
+        margin-left: 100px;
+    }
+
+    #blueBow {
+        top: -930px;
+        height: 400px;
+    }
+
+    .backDots {
+        width: 900px;
+        top: -880px;
+    }
+
+    .btnPlace {
+        @include freePlacing($t:-380px, $l:220px);
+    }
+
+    .socialIcons {
+        top: -820px;
+    }
+}
+
+@media (max-width:600px) {
+    .welcomeText {
+        left: -10px;
+        z-index:3;
+        top: -120px;
+    }
+
+    #verticalText {
+        font-size: 36px;
+        padding-left: 2px;
+    }
+
+    .jobTitle {
+        font-size: 36px;
+        line-height: 45px;
+    }
+
+    .btnPlace {
+        @include freePlacing($t:-460px, $l:220px);
+    }
+
+    .socialIcons {
+        top: -900px;
+        left: -100px;
+    }
+
+    .resizer {
+        font-size: 24px !important;
+    }
+}
+
+@media (max-width:500px) {
+    .mainPic {
+        top: 350px;        
+    }
+
+    .overlay {
+        height: 550px;
+        margin-left: 0;
+    }
+
+    #blueBow {
+        top: -915px;
+    }
+
+    .backDots {
+        width: 600px;
+        top: -850px;
+    }
+
+    #verticalText {
+        font-size: 32px;
+        padding-left: 0;
+        line-height: 46.8px;
+    }
+
+    .jobTitle {
+        font-size: 30px;
+        line-height: 30px;
+    }
+
+    .socialIcons {
+        top: -830px;
+        left: -100px;
+    }
+
+    .btnPlace {
+        &:hover {left: 216px;}
+    }
+
+    .resizer {
+        font-size: 22px !important;
+    }
+}
+
+@media (max-width:400px) {
+    .mainPic {
+        top: 250px;        
+    }
+
+    .overlay {
+        height: 425px;
+        margin-left: 0;
+    }
+
+    #blueBow {
+        top: -1015px;
+        height: 300px;
+    }
+
+    .backDots {
+        width: 500px;
+        top: -850px;
+    }
+
+    #verticalText {
+        font-size: 24px;
+        padding-left: 0;
+        line-height: 46.8px;
+    }
+
+    .jobTitle {
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .welcomeText {
+        top: -250px;
+    }
+
+    .btnPlace {
+        @include freePlacing($t:-600px, $l:220px);
+    }
+
+    .socialIcons {
+        top: -900px;
+    }
+
+    .purpleLine {
+        width: 5vw;
+        min-width: 150px;
+        height: 5px;
+        background-color: $colorPurple;
+        margin-right: 12px;
+    }
+
+    .resizer {
+        font-size: 20px !important;
+        line-height: 25px !important;
+    }
+}

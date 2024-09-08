@@ -43,3 +43,34 @@ footer {
     @include dFlex();
 }
 
+@media(max-width:1000px) {
+    .footerContent {
+        @include dFlex($fd:column, $jc:space-between); 
+        height: 250px;
+        margin-bottom: 32px;
+    }
+
+    .logo {
+        margin-top: 32px;
+        @include dFlex($fd:column);
+        >div {
+            margin-top: 30px;
+            padding-left: 0;
+        }
+    }
+}
+
+@media(max-width:500px) {
+    .logo {
+        >img {
+            width: 90%;
+            height: 90%;
+        }
+    }
+
+    .footerContent {
+        >span {
+            font-size: 18px;
+        }
+    }
+}

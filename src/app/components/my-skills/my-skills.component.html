@@ -1,4 +1,7 @@
-<div class="containerBackground">
+  <div class="bookmark" id="mySkills">
+    
+  </div><div class="containerBackground">
+  
     <div class="mySkillsContent">
         <div class="leftSide">
             @for(icon of skillsDataList.skillsLabList; track icon.name) {
@@ -6,32 +9,18 @@
             }
         </div>
         <div class="rightSide">
-            @if(language == 'eng'){
-                <span class="topTitle" style="margin-bottom: 64px;">{{contentText[0].eng}}</span>
-            } @else {
-                <span class="topTitle" style="margin-bottom: 64px;">{{contentText[0].ger}}</span>
-            }
+            <span class="topTitle" style="margin-bottom: 64px;">{{changeLang.language === 'eng' ? contentText[0].eng :
+                contentText[0].ger}}</span>
             <div class="text">
-                @if(language == 'eng'){
-                    <span class="lowText">{{contentText[1].eng}}</span>
-                    <h2>{{contentText[2].eng}}</h2>
-                    <span class="lowText">{{contentText[3].eng}}</span>
-                } @else {
-                    <span class="lowText">{{contentText[1].ger}}</span>
-                    <h2>{{contentText[2].ger}}</h2>
-                    <span class="lowText">{{contentText[3].ger}}</span>
-                }
-                
+                <span class="lowText">{{changeLang.language === 'eng' ? contentText[1].eng : contentText[1].ger}}</span>
+                <p>{{changeLang.language === 'eng' ? contentText[2].eng : contentText[2].ger}}</p>
+                <span class="lowText">{{changeLang.language === 'eng' ? contentText[3].eng : contentText[3].ger}}</span>
                 <div style="height: 100px;">
-                    @if(language == 'eng'){
-                        <a href="#contact"><button class="btnPlace">{{contentText[4].eng}}</button></a>
-                    } @else {
-                        <a href="#contact"><button class="btnPlace">{{contentText[4].ger}}</button></a>
-                    }
+                    <a href="#contact"><button class="btnPlace">{{changeLang.language === 'eng' ? contentText[4].eng :
+                            contentText[4].ger}}</button></a>
                 </div>
             </div>
             <div class="purpleLine">&nbsp;</div>
         </div>
     </div>
 </div>
-<div class="bookmark" id="portfolio"></div>

@@ -2,13 +2,13 @@ import { Component, inject } from '@angular/core';
 import { LanguageService } from '../language.service';
 
 @Component({
-  selector: 'app-imprint',
+  selector: 'app-privacypolicy',
   standalone: true,
   imports: [],
-  templateUrl: './imprint.component.html',
-  styleUrl: './imprint.component.scss'
+  templateUrl: './privacypolicy.component.html',
+  styleUrl: './privacypolicy.component.scss'
 })
-export class ImprintComponent {
+export class PrivacypolicyComponent {
 
 changeLang = inject(LanguageService);
 

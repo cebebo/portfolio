@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { LanguageService } from '../../../language.service';
 
 @Component({
   selector: 'app-navigation',
@@ -10,9 +11,11 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class NavigationComponent {
 
-  language = 'eng';
+  changeLang = inject(LanguageService);
 
-  @Output() changeLang = new EventEmitter<string>();
+  
+  language = 'eng';
+  mobileMenu = false;
 
   menuText = [
     {
@@ -26,10 +29,17 @@ export class NavigationComponent {
   ];
 
   changeLanguage() {
-    if (this.language == 'eng') {
-      this.language = 'ger';
-    } else { this.language = 'eng' };
-    this.changeLang.emit(this.language);
+    if (this.changeLang.language == 'eng') {
+      this.changeLang.language = 'ger';
+    } else { this.changeLang.language = 'eng' };
+  }
+
+  openMenu() {
+    this.mobileMenu = true;
+  }
+
+  closeMenu() {
+    this.mobileMenu = false;
   }
 
 }

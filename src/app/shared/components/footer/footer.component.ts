@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
+import { LanguageService } from '../../../language.service';
 
 @Component({
   selector: 'app-footer',
@@ -9,6 +10,6 @@ import { Component, Input } from '@angular/core';
 })
 export class FooterComponent {
 
-@Input() language = 'eng';
+changeLang = inject(LanguageService);
 
 }

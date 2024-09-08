@@ -1,19 +1,23 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, inject, Input } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
+import { LanguageService } from '../../language.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
 
-  @Input() language = 'eng';
+  changeLang = inject(LanguageService);
 
   http = inject(HttpClient);
+
+  checkPolicy = false;
 
   contentText = [
     {
@@ -45,13 +49,22 @@ export class ContactComponent {
       ger: 'Ihre Nachricht'
     },
     {
-      eng: "I've read the privacy policy and agree to the processing of my data as outlined.",
-      ger: 'Ich habe die Datenschutzerklärung gelesen und stimme dieser mit meinen angegeben Daten zu.'
-    },
-    {
       eng: 'Send message',
       ger: 'Nachricht senden'
     },
+    {
+      eng: 'Please enter your name!',
+      ger: 'Bitte Namen angeben!'
+    },
+    {
+      eng: 'Please enter your email-adress correctly!',
+      ger: 'Bitte E-Mail Adresse eintragen!'
+    },
+    {
+      eng: 'Please enter a message!',
+      ger: 'Bitte eine Nachricht eingeben!'
+    }
+
   ];
 
   contactData = {
@@ -74,11 +87,11 @@ export class ContactComponent {
   };
 
   onSubmit(ngForm: NgForm) {
-    if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+    if (ngForm.submitted && ngForm.form.valid && !this.mailTest && this.checkPolicy) {
       this.http.post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
           next: (response) => {
-
+            
             ngForm.resetForm();
           },
           error: (error) => {
@@ -89,7 +102,12 @@ export class ContactComponent {
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
 
       ngForm.resetForm();
+      this.checkPolicy = false;
     }
+  }
+
+  changePolicy() {
+    this.checkPolicy = !this.checkPolicy;
   }
 
 }

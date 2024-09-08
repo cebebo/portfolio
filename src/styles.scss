@@ -10,6 +10,7 @@ html {
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
+  
 }
 
 p h2 {
@@ -37,6 +38,7 @@ a {
   border-top-left-radius: 80%;
   border-top-right-radius: 20%;
   transition: filter .15s, border-bottom-color .15s, border-top-color .15s ease-in-out;
+
   &:hover {
     border-bottom: 3px solid;
     border-top: 3px solid;
@@ -70,7 +72,7 @@ a {
   bottom: $b;
 }
 
-@mixin incoming($name, $start:100px, $end: 200px) {
+@mixin incoming($name, $start: 100px, $end: 200px) {
   opacity: 0;
   animation: $name linear forwards;
   animation-timeline: view();
@@ -102,10 +104,11 @@ button {
   background-color: $colorGreen;
   color: white;
   transition: padding .25s, left .25s, background-color .25s ease-in-out;
-  z-index: 4;
+  z-index: 8;
   scale: 0;
   @include fontColor($weight: 400, $size: 23px, $liHi: 27.6px);
   @include incoming($name: growing, $start: 100px, $end: 200px);
+
   &:hover {
     cursor: pointer;
     padding: 23px 38px 23px 38px;
@@ -114,27 +117,32 @@ button {
 }
 
 @keyframes growing {
-  to {scale: 1; opacity: 1;}
+  to {
+    scale: 1;
+    opacity: 1;
+  }
 }
 
 .iconDots {
   width: 80px;
   height: 50px;
   @include dFlex();
+
   >img {
-      height: 30px;
-      transition: height .25s, border-bottom .35s, border-top .35s ease-in-out;
-      &:hover {
-          cursor: pointer;
-          height: 40px;
-          border-bottom: solid 2px $colorPurple;
-          border-bottom-left-radius: 20%;
-          border-bottom-right-radius: 80%;
-          border-top: solid 2px $colorGreen;
-          border-top-left-radius: 80%;
-          border-top-right-radius: 20%;
-          padding: 5px;
-      }
+    height: 30px;
+    transition: height .25s, border-bottom .35s, border-top .35s ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      height: 40px;
+      border-bottom: solid 2px $colorPurple;
+      border-bottom-left-radius: 20%;
+      border-bottom-right-radius: 80%;
+      border-top: solid 2px $colorGreen;
+      border-top-left-radius: 80%;
+      border-top-right-radius: 20%;
+      padding: 5px;
+    }
   }
 }
 
@@ -334,4 +342,40 @@ button {
   font-weight: 900;
   src: url('./assets/fonts/poppins-v21-latin-900italic.woff2') format('woff2');
   /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+@media(max-width: 1300px) {
+  .topTitle {
+    font-size: 60px;
+    line-height: 44px;
+  }
+}
+
+@media(max-width: 600px) {
+  .topTitle {
+    font-size: 48px;
+    line-height: 24px;
+  }
+}
+
+@media(max-width: 500px) {
+  .topTitle {
+    font-size: 38px;
+    line-height: 20px;
+  }
+
+  button {
+    padding: 10px 20px 10px 20px;
+    @include fontColor($weight: 400, $size: 20px, $liHi: 27.6px);
+    &:hover {
+      padding: 15px 25px 15px 25px;
+    }
+  }
+}
+
+@media(max-width: 400px) {
+  .topTitle {
+    font-size: 30px;
+    line-height: 24px;
+  }
 }

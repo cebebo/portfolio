@@ -7,10 +7,15 @@
     @include dFlex($jc: space-between);
 }
 
+.bookmark {
+    @include freePlacing($t:-250px,$l:0)
+}
+
+
 .leftSide {
     width: 600px;
     @include freePlacing($t: 200px);
-    @include dFlex($jc: flex-start);
+    @include dFlex($jc: space-evenly);
     flex-wrap: wrap;
     z-index: 1;
 }
@@ -42,7 +47,7 @@
     text-align: end;
 }
 
-h2 {
+p {
     @include fontColor($weight: 700, $size: 32px, $liHi: 38.4px);
     margin-block-start: 0;
     margin-block-end: 0;
@@ -74,6 +79,110 @@ h2 {
     @include keyframesValue($top: -400px, $left: 640px);
 }
 
-.bookmark {
-    @include freePlacing($t: -500px);
+@media(max-width: 1500px) {
+    .rightSide {
+        margin-right: 32px;
+    }
+}
+
+@media(max-width: 1300px) {
+    .mySkillsContent {
+        margin-top: -900px;
+    }
+
+    .rightSide {
+        @include freePlacing($t: 100px);
+    }
+}
+
+@media(max-width: 1000px) {
+    .mySkillsContent {
+        margin-top: 400px;
+        @include dFlex($fd:column-reverse, $jc: space-between);
+    }
+
+    .leftSide {
+        width: 95%;
+        justify-content: space-evenly;
+    }
+    
+    .rightSide {
+        width: 95%;
+        height: 300px;
+        >span {
+            margin-bottom: 32px;
+            padding-right: 32px;
+        }
+    }
+
+    .purpleLine {
+        @include freePlacing($t: -360px, $l: 1140px);
+    }
+
+    @keyframes fade-in-right {
+        @include keyframesValue($top: -444px, $left: 640px);
+    }
+
+    .bookmark {
+        @include freePlacing($t:160px,$l:0)
+    }
+}
+
+@media(max-width: 800px) {
+    .mySkillsContent {
+        margin-top: 500px;
+        @include dFlex($fd:column-reverse, $jc: space-between);
+    }
+
+    .text {
+        @include dFlex($fd: column, $ai: center);
+    }
+
+    .lowText {
+        text-align: center;
+    }
+
+    .rightSide {
+        margin-right: 0;
+    }
+
+    p {
+        text-align: center;
+    }
+
+    .bookmark {
+        @include freePlacing($t:280px,$l:0)
+    }
+}
+
+@media(max-width: 700px) {
+    .mySkillsContent {
+        margin-top: 250px;
+    }
+
+    .bookmark {
+        @include freePlacing($t:180px,$l:0)
+    }
+}
+
+@media(max-width: 650px) {
+    .mySkillsContent {
+        margin-top: 580px;
+    }
+}
+
+@media(max-width: 500px) {
+    .mySkillsContent {
+        margin-top: -270px;
+    }
+
+    .bookmark {
+        @include freePlacing($t:-200px,$l:0)
+    }
+}
+
+@media(max-width: 439px) {
+    .mySkillsContent {
+        margin-top: 0px;
+    }
 }

@@ -15,21 +15,28 @@ header {
     height: 75px;
     @include dFlex();
     transition: filter .15s ease-in-out;
+
     >img {
         position: relative;
+
         &:hover {
             border: 2px solid $colorPurple;
             border-radius: 50%;
         }
     }
+
     &:hover {
         filter: drop-shadow(0px 0px 5px white);
         cursor: pointer;
     }
 }
 
+.title {
+    height: 32px;
+}
+
 .eng {
-    height:30px;
+    height: 30px;
     z-index: 0;
     left: 16px;
 }
@@ -83,6 +90,7 @@ h2 {
     bottom: 5%;
     right: 5%;
     transition: background-color .15s, border-top-left-radius .15s, border-top-right-radius .15s, border-bottom-left-radius .15s, border-bottom-right-radius .15s ease-in-out;
+
     &:hover {
         cursor: pointer;
         border-top-left-radius: 80%;
@@ -90,5 +98,163 @@ h2 {
         border-bottom-left-radius: 20%;
         border-bottom-right-radius: 80%;
         background-color: $colorPurple;
+    }
+}
+
+.mobileMenu {
+    display: none;
+    transition: scale .15s, border-radius .15s, background-color .15s ease-in-out;
+
+    &:hover {
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 30%;
+        scale: 1.2;
+    }
+}
+
+.menuOverlay {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(20, 29, 47, 0.95);
+    position: fixed;
+    top: 0;
+    left: 100%;
+    opacity: 0;
+    z-index: 20;
+    @include dFlex($fd: column, $jc: flex-start);
+}
+
+.openMobileMenu {
+    animation: user-Menu-incoming .25s ease-in-out forwards;
+}
+
+@keyframes user-Menu-incoming {
+    from{
+        left: 100%;
+        opacity: 0;
+    }
+    
+    to {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+.mobileLink {
+    color: white;
+    filter: drop-shadow(0px 0px 5px black);
+
+    &:hover {
+        color: $colorGreen;
+        border: 4px solid $colorPurple;
+        border-top-left-radius: 80%;
+        border-bottom-left-radius: 20%;
+        border-top-right-radius: 20%;
+        border-bottom-right-radius: 80%;
+        filter: drop-shadow(0px 0px 17px white);
+    }
+}
+
+.closer {
+    @include dFlex($jc: flex-end);
+    width: 90%;
+    height: 10vh;
+
+    >img {
+        height: 42px;
+        &:hover {
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 30%;
+            scale: 1.2;
+        }
+    }
+}
+
+.options {
+    @include dFlex($fd: column);
+    font-size: 48px;
+    gap: 24px;
+    height: 90vh;
+}
+
+
+@media(max-width: 1000px) {
+    .buttons {
+        display: none;
+    }
+
+    .mobileMenu {
+        display: block;
+    }
+}
+
+@media(max-width: 600px) {
+    .flags {
+        margin-right: 12px;        
+    }
+
+    .eng, .ger {
+        height: 20px;
+    }
+
+    .eng {
+        left: 12px;
+    }
+
+    .primary {
+        height: 30px;
+    }
+}
+
+@media(max-width: 500px) {
+    .title {
+        height: 28px;
+    }
+
+    header {
+        height: 75px;
+    }
+
+    .navigationBar {
+        padding-left: 17px;
+        padding-right: 17px;
+    }
+
+    .mobileMenu {
+        height: 24px;
+    }
+
+    .options {
+        font-size: 40px;
+        gap: 20px;
+    }
+}
+
+@media(max-width: 400px) {
+    .title {
+        height: 22px;
+    }
+
+    header {
+        height: 50px;
+    }
+
+    .navigationBar {
+        padding-left: 7px;
+        padding-right: 7px;
+    }
+
+    .eng, .ger {
+        height: 15px;
+    }
+
+    .eng {
+        left: 7px;
+    }
+
+    .primary {
+        height: 20px;
     }
 }

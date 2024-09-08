@@ -7,18 +7,36 @@
     @include dFlex($fd: column);
 }
 
+.bookmark {
+    @include freePlacing($t:-500px,$l:0)
+}
+
+.topTitle {
+    @include incoming(fade-in-text);
+}
+
+@keyframes fade-in-text {
+    to {
+        opacity: 1;
+    }
+}
+
 .purpleLine {
     width: 1800px;
     height: 5px;
     background-color: $colorPurple;
     margin-right: 32px;
     z-index: 4;
-    @include freePlacing($t: -450px, $l: -1120px);
-    // @include incoming(fade-in-right, $start: 200px, $end: 450px);
+    @include freePlacing($t: -450px, $l: -1520px);
+    @include incoming(slide-in-right, $start: 100px, $end: 350px);
+}
+
+@keyframes slide-in-right {
+    @include keyframesValue($top: -450px, $left: -1120px);
 }
 
 .container {
-    margin-top: 128px;
+    margin-top: 42px;
     width: 100%;
     color: white;
     @include dFlex($jc: space-between, $ai: flex-start);
@@ -31,16 +49,24 @@
 .text,
 form {
     @include dFlex($fd: column, $ai: flex-start);
-    width: 50%;
+    width: 100%;
+    padding-right: 24px;
+
+    ::placeholder {
+        color: white;
+        font-family: 'Poppins';
+    }
 }
 
 h2 {
     @include fontColor($weight: 700, $size: 32px, $liHi: 38.4px);
+    @include incoming(fade-in-text);
 }
 
 span {
     @include fontColor($weight: 400, $size: 16px, $liHi: 19.2px);
     margin-bottom: 16px;
+    @include incoming(fade-in-text);
 }
 
 input,
@@ -53,17 +79,222 @@ textarea {
     margin-bottom: 20px;
     transition: border .15s ease-in-out;
     color: white;
+    scale: 0.5;
+    @include incoming(slide-in-left);
 
     &:hover {
         border: solid 1px $colorGreen;
     }
 }
 
+@keyframes slide-in-left {
+    to {
+        scale: 1;
+        opacity: 1
+    }
+}
+
 textarea {
     resize: vertical;
-    min-height: 200px;
+    min-height: 150px;
+}
+
+textarea.ng-dirty.ng-touched.ng-invalid {
+    border: 1px solid red;
+}
+
+textarea.ng-valid {
+    border: 1px solid $colorGreen;
+}
+
+input.ng-dirty.ng-touched.ng-invalid {
+    border: 1px solid red;
+}
+
+input.ng-valid {
+    border: 1px solid $colorGreen;
 }
 
 .bottom {
     height: 50vh !important;
+}
+
+.inputCheck {
+    @include freePlacing($t: -56px, $l: 630px);
+    @include incoming(fade-in-text);
+}
+
+.policyLine {
+    @include dFlex();
+    width: 100%;
+    margin-bottom: 32px;
+
+    >span {
+        margin-bottom: 0 !important;
+    }
+}
+
+.checkPol {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    border: 1px solid $colorPurple;
+    cursor: pointer;
+    margin-right: 12px;
+    transition: border .15s ease-in-out;
+
+    &:hover {
+        border: 1px solid $colorGreen !important;
+        background-color: #183771;
+        ;
+    }
+}
+
+.checked {
+    margin-top: -8px;
+    color: $colorGreen;
+    font-size: 22px;
+}
+
+.buttonBox {
+    height: 64px;
+    width: 100%;
+    text-align: center;
+}
+
+.submitButton {
+    padding: 15px 30px 15px 30px;
+    border-radius: 10px;
+    border: 0;
+    background-color: $colorGreen;
+    color: white;
+    transition: padding .25s, left .25s, background-color .25s ease-in-out;
+    z-index: 8;
+    scale: 0;
+    width: 250px !important;
+    @include fontColor($weight: 400, $size: 23px, $liHi: 27.6px);
+    @include incoming($name: growing, $start: 20px, $end: 120px);
+
+    &:hover {
+        cursor: pointer;
+        padding: 23px 38px 23px 38px;
+        background-color: $colorPurple;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: $colorPurple;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+@media(max-width: 1500px) {
+    .contactContent {
+        width: 95%;
+    }
+
+    input,
+    textarea {
+        width: 500px;
+    }
+
+    .inputCheck {
+        @include freePlacing($t: -56px, $l: 517px);
+    }
+}
+
+@media(max-width: 1500px) {
+    .contactContent {
+        margin-top: -475px;
+    }
+}
+
+@media(max-width: 1000px) {
+    .contactContent {
+        margin-top: 600px;
+    }
+
+    .container {
+        @include dFlex($fd: column, $jc: center, $ai: center);
+    }
+
+    .bottom {
+        height: 200vh !important;
+    }
+
+    .text,
+    form {
+        @include dFlex($fd: column, $ai: center);
+        
+    }
+
+    .text {
+        padding-left: 24px;
+    }
+
+    .inputCheck {
+        @include freePlacing($t: -56px, $l: 250px);
+    }
+
+    .purpleLine {
+        @include freePlacing($t: 625px, $l: -1520px);
+        @include incoming(slide-in-right, $start: 100px, $end: 350px);
+    }
+    
+    @keyframes slide-in-right {
+        @include keyframesValue($top: 625px, $left: -1120px);
+    }
+
+    .bookmark {
+        @include freePlacing($t:670px,$l:0)
+    }
+}
+
+@media(max-width: 600px) {
+
+    input,
+    textarea {
+        width: 80%;
+        padding: 15px 25px 15px 25px;
+    }
+
+    .policyLine {
+        flex-direction: column;
+        >span {
+            text-align: center;
+            margin-top: 8px;
+        }
+    }
+
+    .inputCheck {
+        @include freePlacing($t: -56px, $l: 190px);
+    }
+
+}
+
+@media(max-width: 500px) {
+    .inputCheck {
+        @include freePlacing($t: -56px, $l: 150px);
+    }
+
+    .contactContent {
+        margin-top: 300px;
+    }
+
+    .bookmark {
+        @include freePlacing($t:500px,$l:0)
+    }
+}
+
+@media(max-width: 400px) {
+    .inputCheck {
+        @include freePlacing($t: -56px, $l: 120px);
+    }
+
+    .bookmark {
+        @include freePlacing($t:480px,$l:0)
+    }
 }

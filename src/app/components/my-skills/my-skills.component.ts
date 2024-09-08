@@ -1,7 +1,8 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { SkillIconsComponent } from './skill-icons/skill-icons.component';
 import { Skillsdataservice } from './skill-icons/skillsdata.service';
 import { CommonModule } from '@angular/common';
+import { LanguageService } from '../../language.service';
 
 @Component({
   selector: 'app-my-skills',
@@ -14,7 +15,7 @@ export class MySkillsComponent {
 
   skillsDataList = inject(Skillsdataservice);
 
-  @Input() language = 'eng';
+changeLang = inject(LanguageService);
 
   contentText = [
     {
@@ -27,7 +28,7 @@ export class MySkillsComponent {
     },
     {
       eng: "Looking for another skill?",
-      ger: 'Suchen Sie nach einer anderen Fähigkeit?'
+      ger: 'Suchen Sie weitere Fähigkeit?'
     },
     {
       eng: "Feel free to contact me. I look forward to expanding on my previous knowledge.",

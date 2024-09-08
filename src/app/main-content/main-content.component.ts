@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { AboutMeComponent } from '../components/about-me/about-me.component';
 import { MySkillsComponent } from '../components/my-skills/my-skills.component';
 import { HeroComponent } from '../components/hero/hero.component';
@@ -13,7 +13,5 @@ import { ContactComponent } from '../components/contact/contact.component';
   styleUrl: './main-content.component.scss'
 })
 export class MainContentComponent {
-
-  @Input()language = 'eng';
-
+  
 }

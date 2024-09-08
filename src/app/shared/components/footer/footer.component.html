@@ -4,11 +4,7 @@
         <div class="logo">
             <img src="./../../../../assets/img/title.png">
             <div>
-                @if (language == 'eng') {
-                    <span class="navLink">Imprint</span>
-                } @else {
-                    <span class="navLink">Impressum</span>
-                }
+                <a href="imprint"><span class="navLink">{{changeLang.language === 'eng' ? "Imprint" : "Impressum"}}</span></a>
             </div>
         </div>
         <span>&#169; Christian Becker 2024</span>

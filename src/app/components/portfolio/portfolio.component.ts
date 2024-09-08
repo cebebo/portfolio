@@ -1,6 +1,7 @@
 import { Component, inject, Input } from '@angular/core';
 import { MyProjectComponent } from './my-project/my-project.component';
 import { Projectdataservice } from './my-project/projectdata.service';
+import { LanguageService } from '../../language.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -37,7 +38,7 @@ export class PortfolioComponent {
     }
   }
 
-  @Input() language = 'eng';
+changeLang = inject(LanguageService);
 
   contentText = [
     {

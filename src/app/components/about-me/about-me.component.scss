@@ -1,6 +1,5 @@
 @import './../../../styles.scss';
 
-
 .aboutMeContent {
     width: 100%;
     max-width: 1440px;
@@ -11,7 +10,8 @@
 
 .leftSide {
     @include freePlacing($t: 180px, $l: 48px);
-    >span, div {
+    >span,
+    div {
         @include incoming($name: fade-in-text);
     }
 }
@@ -37,7 +37,7 @@
 }
 
 @keyframes fade-in-text {
-    to {opacity: 1;}
+    to { opacity: 1; }
 }
 
 .greenLine {
@@ -69,9 +69,109 @@
     >img {
         height: 32px;
         transition: height .25s ease-in-out;
-
         &:hover {
             height: 48px;
         }
+    }
+}
+
+
+@media(max-width: 1200px) {
+    .rightSide {
+        @include incoming($name: fade-in-photo, $start: -200px, $end: -100px);
+        >img {
+            height: 300px;
+            margin-top: -560px;
+        }
+    }
+
+    .leftSide {
+        top: 80px;
+        left: 12px;
+    }
+
+    .topics {
+        width: 185%;
+    }
+}
+
+@media(max-width: 1100px) {
+    .topics {
+        width: 200%;
+    }
+
+}
+
+@media(max-width: 1000px) {
+    .aboutMeContent {
+        margin-top: 400px;
+        z-index: 4;
+        @include dFlex($fd: column);
+    }
+
+    .rightSide {
+        >img {
+            display: none;
+        }
+    }
+
+    .topics {
+        width: 100%;
+        margin-right: 32px;
+    }
+
+    .leftSide {
+        top: 350px;
+        left: 0px;
+        width: 95%;
+        z-index: 3;
+    }
+
+    .rightSide {
+        @include incoming($name: fade-in-photo, $start: -250px, $end: -150px);
+    }
+
+    .icon {
+        >img {
+            &:hover {
+                height: 32px;
+            }
+        }
+    }
+}
+
+@media(max-width: 800px) {
+    .aboutMeContent {
+        margin-top: 580px;
+    }
+}
+
+@media(max-width: 700px) {
+    .aboutMeContent {
+        margin-top: 180px;
+    }
+}
+
+@media(max-width: 500px) {
+    .topics {
+        font-size: 12px;
+    }
+
+    .leftSide {
+        top: 350px;
+        width: 90%;
+        >div {
+            font-size: 12px;
+        }
+    }
+
+    .aboutMeContent {
+        margin-top: -280px;
+    }
+}
+
+@media(max-width: 400px) {
+    .aboutMeContent {
+        margin-top: -475px;
     }
 }

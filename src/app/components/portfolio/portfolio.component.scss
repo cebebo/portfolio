@@ -12,6 +12,10 @@
     }
 }
 
+.bookmark {
+    @include freePlacing($t:-100px,$l:0)
+}
+
 @keyframes slide-in-left {
     to {
         margin-left: 64px;
@@ -182,3 +186,104 @@ p {
 .purpleDot {
     @include freePlacing($t: -330px, $l: -900px);
 }
+
+@media(max-width:1400px) {
+    p {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+
+@media(max-width:1300px) {
+    .portfolioContent {
+        margin-top: -750px;
+    }
+
+    .bookmark {
+        @include freePlacing($t:70px,$l:0)
+    }
+}
+
+@media(max-width:1200px) {
+    .preview {
+        width: 500px;
+        @include freePlacing($l: -64px, $t: 64px)
+    }
+}
+
+@media(max-width:1000px) {
+    .portfolioContent {
+        margin-top: 950px;
+    }
+
+    .showBoard {
+        @include dFlex($fd:column, $jc: space-between);
+    }
+
+    .preview {
+        top: -12px;
+    }
+
+    .menu {
+        margin-top: 32px;
+        width: 90%;
+    }
+
+    .collection {
+        @include incoming(twist-icons, $start: 150px, $end: 250px);
+    }
+
+    .bookmark {
+        @include freePlacing($t:1820px,$l:0)
+    }
+}
+
+@media(max-width:800px) {
+    .portfolioContent {
+        margin-top: 1050px;
+    }
+
+    .bookmark {
+        @include freePlacing($t:1920px,$l:0)
+    }
+}
+
+@media(max-width:649px) {
+    @keyframes fade-in-right {
+        @include keyframesValue($top: -228px, $left: 450px);
+    }
+}
+
+@media(max-width:600px) {
+    .preview {
+        width: 95%;
+        left: -32px;
+    }
+
+    .bookmark {
+        @include freePlacing($t:1910px,$l:0)
+    }
+}
+
+@media(max-width:500px) {
+    .portfolioContent {
+        margin-top: 650px;
+    }
+
+    .btnBox {
+        width: 100%;
+        margin-top: 120px;
+    }
+
+    .buttonPurple, .buttonBlue {
+        padding: 10px 20px 10px 20px;
+        @include fontColor($weight: 400, $size: 20px, $liHi: 20.6px);
+    }
+
+    .bookmark {
+        @include freePlacing($t:1520px,$l:0)
+    }
+
+}
+

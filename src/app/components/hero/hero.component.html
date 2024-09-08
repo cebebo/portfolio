@@ -2,41 +2,26 @@
 
     <div class="heroContent">
         <div class="mainPic">
-            <img style="position: relative; left: -60px; width: 750px; top: -70px;"
-                src="./../../../assets/img/colorDots1.png">
+            <img class="backDots" src="./../../../assets/img/colorDots1.png">
             <img class="overlay" src="./../../../assets/img/portrait.png">
         </div>
         <div class="textContainer">
             <div class="welcomeText">
-                @if(language == 'eng'){
-                    <h2 id="verticalText">{{contentText[0].eng}}</h2>
-                } @else {
-                    <h2 [ngClass]="'resizer'" id="verticalText">{{contentText[0].ger}}</h2>
-                }
+                <h2 id="verticalText">{{changeLang.language === 'eng' ? contentText[0].eng : contentText[0].ger}}</h2>
                 <div class="nameContainer">
                     <span class="topTitle fontPoppins">Christian Becker</span><br>
-                    @if(language == 'eng'){
-                        <span class="jobTitle">{{contentText[1].eng}}</span>
-                    } @else {
-                        <span class="jobTitle">{{contentText[1].ger}}</span>
-                    }
+                    <span class="jobTitle">{{changeLang.language === 'eng' ? contentText[1].eng : contentText[1].ger}}</span>
                 </div>
             </div>
-            @if(language == 'eng'){
-                <a href="#contact"><button class="btnPlace">{{contentText[2].eng}}</button></a>
-            } @else {
-                <a href="#contact"><button class="btnPlace">{{contentText[2].ger}}</button></a>
-            }
+            <a href="#contact"><button class="btnPlace">{{changeLang.language === 'eng' ? contentText[2].eng : contentText[2].ger}}</button></a>
         </div>
-
     </div>
-
     <img id="blueBow" src="./../../../assets/img/heroBackground.png">
     <div class="socialIcons" id="aboutMe">
         <div class="purpleLine"></div>
         <div class="iconDots"><img src="./../../../assets/icons/icon-discord.png"></div>
         <div class="iconDots"><img src="./../../../assets/icons/icon-email.png"></div>
         <div class="iconDots"><img src="./../../../assets/icons/icon-linkedin.png"></div>
-        <span class="navLink" style="margin-left: 32px; font-size: 23px; font-weight: 400;">mail&#64;becker-christian.de</span>
+        <span class="navLink emailAdress">mail&#64;becker-christian.de</span>
     </div>
 </div>

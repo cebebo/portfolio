@@ -1,12 +1,9 @@
 <div class="containerBackground">
+    <div class="bookmark" id="portfolio"></div>
     <img class="greenDot" src="./../../../assets/img/greenDot1.png">
     <div class="portfolioContent">
         <span class="topTitle titleBackground" style="margin-bottom: 100px;">Portfolio</span>
-        @if(language == 'eng'){
-            <p>{{contentText[0].eng}}</p>
-        } @else {
-            <p>{{contentText[0].ger}}</p>
-        }
+            <p>{{changeLang.language === 'eng' ? contentText[0].eng : contentText[0].ger}}</p>
         <div class="purpleLine">&nbsp;</div>
         <div class="greenLine">&nbsp;</div>
         <div class="showBoard">
@@ -21,20 +18,15 @@
                     <span class="name">{{activeApp.name}}</span>
                     <span class="info">{{activeApp.info}}</span>
                     <div style="height: 100px;">
-                        @if(language == 'eng'){
-                            <span class="description">{{activeApp.description[0]}}</span>
-                        } @else {
-                            <span class="description">{{activeApp.description[1]}}</span>
-                        }
+                        <span class="description">{{changeLang.language === 'eng' ? activeApp.description[0] : activeApp.description[1]}}</span>
                     </div>
-                    <div class="btnBox" id="contact">
+                    <div class="btnBox">
                         <a href="{{activeApp.link}}" target="_blank"><div class="buttonPurple">Live test</div></a>
                         <a href="{{activeApp.github}}" target="_blank"><div class="buttonBlue">Github</div></a>
                     </div>
                 </div>
             </div>
-        </div>
-
+        </div> 
     </div>
     <img class="purpleDot" src="./../../../assets/img/purpleDot1.png">
 </div>

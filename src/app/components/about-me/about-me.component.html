@@ -2,45 +2,26 @@
 
     <div class="aboutMeContent">
         <div class="leftSide" style="padding-left: 16px;">
-            @if(language == 'eng'){
-            <span class="topTitle">{{contentText[0].eng}}</span>
-            } @else {
-            <span class="topTitle">{{contentText[0].ger}}</span>
-            }
-            @if(language == 'eng'){
-                <div style="color:white; margin-top:64px;">{{contentText[1].eng}}</div>
-            } @else {
-                <div style="color:white; margin-top:64px;">{{contentText[1].ger}}</div>
-            }
+            <span class="topTitle">{{changeLang.language === 'eng' ? contentText[0].eng : contentText[0].ger}}</span>
+            <div style="color:white; margin-top:64px;">{{changeLang.language === 'eng' ? contentText[1].eng :
+                contentText[1].ger}}</div>
             <div class="topics">
                 <div class="icon">
                     <img src="./../../../assets/icons/icon-location.png">
                 </div>
-                @if(language == 'eng'){
-                    <span>{{contentText[2].eng}}</span>
-                } @else {
-                    <span>{{contentText[2].ger}}</span>
-                }
+                <span>{{changeLang.language === 'eng' ? contentText[2].eng : contentText[2].ger}}</span>
             </div>
             <div class="topics">
                 <div class="icon">
                     <img src="./../../../assets/icons/icon-bulb.png">
                 </div>
-                @if(language == 'eng'){
-                    <span>{{contentText[3].eng}}</span>
-                } @else {
-                    <span>{{contentText[3].ger}}</span>
-                }
+                <span>{{changeLang.language === 'eng' ? contentText[3].eng : contentText[3].ger}}</span>
             </div>
-            <div class="topics" id="mySkills">
+            <div class="topics">
                 <div class="icon">
                     <img src="./../../../assets/icons/icon-puzzle.png">
                 </div>
-                @if(language == 'eng'){
-                    <span>{{contentText[4].eng}}</span>
-                } @else {
-                    <span>{{contentText[4].ger}}</span>
-                }
+                <span>{{changeLang.language === 'eng' ? contentText[4].eng : contentText[4].ger}}</span>
             </div>
         </div>
         <div class="rightSide">
@@ -50,10 +31,6 @@
 
     </div>
     <div class="greenLine">&nbsp;</div>
-
-
-
-
 </div>
 <div style="width: 100%; max-width: 1440px;">
 
