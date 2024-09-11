@@ -5,12 +5,15 @@ $colorGreen: #70E61C;
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  scrollbar-color: $colorPurple $mainColor;
+  scrollbar-width:thin;
+  // overflow: hidden;
 }
 
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  
+  // overflow: hidden;
 }
 
 p h2 {

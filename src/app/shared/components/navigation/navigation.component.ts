@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, inject, Renderer2 } from '@angular/core';
 import { LanguageService } from '../../../language.service';
+import { ScrollService } from '../../../scroll.service';
 
 @Component({
   selector: 'app-navigation',
@@ -12,7 +13,7 @@ import { LanguageService } from '../../../language.service';
 export class NavigationComponent {
 
   changeLang = inject(LanguageService);
-
+  scroll = inject(ScrollService);
   
   language = 'eng';
   mobileMenu = false;
@@ -28,6 +29,8 @@ export class NavigationComponent {
     }
   ];
 
+  constructor(private renderer: Renderer2) {}
+
   changeLanguage() {
     if (this.changeLang.language == 'eng') {
       this.changeLang.language = 'ger';
@@ -36,10 +39,13 @@ export class NavigationComponent {
 
   openMenu() {
     this.mobileMenu = true;
+    this.renderer.setStyle(document.body, 'overflow', 'hidden');
+    document.body.style.overflow = 'hidden'
   }
 
   closeMenu() {
     this.mobileMenu = false;
+    this.renderer.setStyle(document.body, 'overflow', 'auto');
   }
 
 }

@@ -99,7 +99,7 @@ export class ContactComponent {
           },
           complete: () => console.info('send post complete'),
         });
-    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
+    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest && this.checkPolicy) {
 
       ngForm.resetForm();
       this.checkPolicy = false;

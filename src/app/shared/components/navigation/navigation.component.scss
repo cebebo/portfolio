@@ -1,5 +1,9 @@
 @import './../../../../styles.scss';
 
+html {
+    overflow: hidden;
+}
+
 header {
     position: fixed;
     background-color: $mainColor;
