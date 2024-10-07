@@ -17,6 +17,7 @@ export class NavigationComponent {
   
   language = 'eng';
   mobileMenu = false;
+  
 
   menuText = [
     {
@@ -32,20 +33,24 @@ export class NavigationComponent {
   constructor(private renderer: Renderer2) {}
 
   changeLanguage() {
-    if (this.changeLang.language == 'eng') {
+    if (localStorage.getItem('language') == 'eng') {
+      localStorage.setItem('language', 'ger');
       this.changeLang.language = 'ger';
-    } else { this.changeLang.language = 'eng' };
+    } else { 
+      localStorage.setItem('language', 'eng') 
+      this.changeLang.language = 'eng';
+    };
+    console.log(localStorage.getItem('language') + ' und ' + this.changeLang.language);
   }
 
   openMenu() {
     this.mobileMenu = true;
-    this.renderer.setStyle(document.body, 'overflow', 'hidden');
-    document.body.style.overflow = 'hidden'
+    document.documentElement.style.overflow = 'hidden';
   }
 
   closeMenu() {
     this.mobileMenu = false;
-    this.renderer.setStyle(document.body, 'overflow', 'auto');
+    document.documentElement.style.overflow = 'auto';
   }
 
 }

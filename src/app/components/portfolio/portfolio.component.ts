@@ -26,7 +26,6 @@ export class PortfolioComponent {
   }
 
   updatePreview(id:number) {
-    console.log('nummer' + id);
     this.activeID = id;
     this.activeApp = {
       name: this.projectDataList.projectList[id].name,

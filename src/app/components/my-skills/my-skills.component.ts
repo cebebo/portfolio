@@ -28,7 +28,7 @@ changeLang = inject(LanguageService);
     },
     {
       eng: "Looking for another skill?",
-      ger: 'Suchen Sie weitere Fähigkeit?'
+      ger: 'Suchen Sie weitere Fähigkeiten?'
     },
     {
       eng: "Feel free to contact me. I look forward to expanding on my previous knowledge.",

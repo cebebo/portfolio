@@ -3,18 +3,16 @@
 .mySkillsContent {
     width: 100%;
     max-width: 1440px;
-    margin-top: -1100px;
     @include dFlex($jc: space-between);
 }
 
 .bookmark {
-    @include freePlacing($t:-250px,$l:0)
+    @include freePlacing($t:-100px,$l:0)
 }
 
 
 .leftSide {
     width: 600px;
-    @include freePlacing($t: 200px);
     @include dFlex($jc: space-evenly);
     flex-wrap: wrap;
     z-index: 1;
@@ -25,19 +23,11 @@
     height: 600px;
     color: white;
     @include dFlex($fd: column);
-    @include freePlacing($t: 200px);
     >span {
         margin-bottom: 32px;
         padding-right: 32px;
         background-color: $mainColor;
         z-index: 5;
-        @include incoming(fade-in-text);
-    }
-}
-
-@keyframes fade-in-text {
-    to {
-        opacity: 1;
     }
 }
 
@@ -56,13 +46,14 @@ p {
 
 .btnPlace {
     @include freePlacing($t: 12px);
+    transition: padding .125s ease-in-out !important;
+    &:hover {
+        padding: 23px 38px 23px 38px;
+    }
 }
 
 .text {
     @include dFlex($fd: column, $ai: flex-end);
-    >span, h2 {
-        @include incoming(fade-in-text);
-    }
 }
 
 .purpleLine {
@@ -71,12 +62,26 @@ p {
     background-color: $colorPurple;
     margin-right: 32px;
     z-index: 4;
-    @include freePlacing($t: -400px, $l: 1140px);
-    @include incoming(fade-in-right);
+    @include freePlacing($t: -400px, $l: 440px);
 }
 
-@keyframes fade-in-right {
-    @include keyframesValue($top: -400px, $left: 640px);
+@media (max-height: 500px) {
+    .mySkillsContent {
+        margin-top: 1500px !important;
+    }
+
+    .leftSide {
+        top: -320px !important;
+        z-index: 8;
+    }
+
+    .text p {
+        margin-top: 350px !important;
+    }
+
+    .leftSide {
+        margin-top: -350px !important;
+    }
 }
 
 @media(max-width: 1500px) {
@@ -87,23 +92,24 @@ p {
 
 @media(max-width: 1300px) {
     .mySkillsContent {
-        margin-top: -900px;
+        margin-top: -100px;
     }
 
-    .rightSide {
-        @include freePlacing($t: 100px);
+    .bookmark {
+        @include freePlacing($t:-200px,$l:0)
     }
 }
 
 @media(max-width: 1000px) {
     .mySkillsContent {
-        margin-top: 400px;
+        margin-top: 600px;
         @include dFlex($fd:column-reverse, $jc: space-between);
     }
 
     .leftSide {
         width: 95%;
         justify-content: space-evenly;
+        margin-top: -450px;
     }
     
     .rightSide {
@@ -112,11 +118,23 @@ p {
         >span {
             margin-bottom: 32px;
             padding-right: 32px;
+        }        
+    }
+
+    .text {
+        z-index: 1;
+        align-items: center;
+        >p {
+            margin-top: 450px;
         }
     }
 
+    .lowText {
+        text-align: center;
+    }
+
     .purpleLine {
-        @include freePlacing($t: -360px, $l: 1140px);
+        @include freePlacing($t: -820px, $l: 580px);
     }
 
     @keyframes fade-in-right {
@@ -129,11 +147,7 @@ p {
 }
 
 @media(max-width: 800px) {
-    .mySkillsContent {
-        margin-top: 500px;
-        @include dFlex($fd:column-reverse, $jc: space-between);
-    }
-
+    
     .text {
         @include dFlex($fd: column, $ai: center);
     }
@@ -149,15 +163,76 @@ p {
     p {
         text-align: center;
     }
+}
+
+@media(max-width: 650px) {
+    .mySkillsContent {
+        margin-top: 550px;
+    }
+
+    .leftSide {
+        margin-top: -450px;
+    }
+
+    .text {
+        >p {
+            margin-top: 450px;
+        }
+    }
+
+    .purpleLine {
+        @include freePlacing($t: -850px, $l: 580px);
+    }
 
     .bookmark {
-        @include freePlacing($t:280px,$l:0)
+        @include freePlacing($t:150px,$l:0)
+    }
+
+}
+
+@media(max-width: 500px) {
+    .mySkillsContent {
+        margin-top: 250px;
+    }
+
+    .bookmark {
+        @include freePlacing($t:-150px,$l:0)
+    }
+
+    .purpleLine {
+        display: none;
+    }    
+}
+
+@media(max-width: 450px) {
+    .leftSide {
+        margin-top: -550px;
+    }
+
+    .text {
+        >p {
+            margin-top: 550px;
+        }
+    }
+
+    .bookmark {
+        @include freePlacing($t:-220px,$l:0)
     }
 }
 
-@media(max-width: 700px) {
+@media(max-width: 439px) {
     .mySkillsContent {
-        margin-top: 250px;
+        margin-top: 675px;
+    }
+
+    .leftSide {
+        margin-top: -550px;
+    }
+
+    .text {
+        >p {
+            margin-top: 550px;
+        }
     }
 
     .bookmark {
@@ -165,24 +240,8 @@ p {
     }
 }
 
-@media(max-width: 650px) {
+@media(max-width: 350px) {
     .mySkillsContent {
-        margin-top: 580px;
-    }
-}
-
-@media(max-width: 500px) {
-    .mySkillsContent {
-        margin-top: -270px;
-    }
-
-    .bookmark {
-        @include freePlacing($t:-200px,$l:0)
-    }
-}
-
-@media(max-width: 439px) {
-    .mySkillsContent {
-        margin-top: 0px;
+        margin-top: 700px;
     }
 }

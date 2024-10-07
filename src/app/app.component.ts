@@ -8,6 +8,7 @@ import { HeroComponent } from "./components/hero/hero.component";
 import { PortfolioComponent } from "./components/portfolio/portfolio.component";
 import { ContactComponent } from "./components/contact/contact.component";
 import { FooterComponent } from "./shared/components/footer/footer.component";
+import AOS from 'aos';
 
 @Component({
   selector: 'app-root',
@@ -23,6 +24,19 @@ export class AppComponent {
 
   currentLanguage(lang:string) {
     this.language = lang;
+  }
+
+  ngOnInit() {
+    if(!localStorage.getItem('activeProject')) {
+      localStorage.setItem('activeProject', '0');  
+    }
+    if(!localStorage.getItem('language')) {
+      localStorage.setItem('language', 'eng');  
+    }
+    if(!localStorage.getItem('backupLink')) {
+      localStorage.setItem('backupLink', '#top');  
+    }
+    AOS.init();
   }
 }
 

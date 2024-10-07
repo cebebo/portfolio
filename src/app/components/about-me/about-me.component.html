@@ -1,36 +1,37 @@
 <div class="containerBackground">
-
+    <div class="bookmark" id="aboutMe"></div>
+    <div class="dotBack">
+        <img class="purpleDot" src="./../../../assets/img/purpleDot2.png">
+    </div>
     <div class="aboutMeContent">
-        <div class="leftSide" style="padding-left: 16px;">
-            <span class="topTitle">{{changeLang.language === 'eng' ? contentText[0].eng : contentText[0].ger}}</span>
-            <div style="color:white; margin-top:64px;">{{changeLang.language === 'eng' ? contentText[1].eng :
+        <div class="leftSide">
+            <span class="topTitle" data-aos="fade-up">{{changeLang.language === 'eng' ? contentText[0].eng : contentText[0].ger}}</span>
+            <div style="color:white; margin-top:64px;" data-aos="zoom-in-right">{{changeLang.language === 'eng' ? contentText[1].eng :
                 contentText[1].ger}}</div>
             <div class="topics">
-                <div class="icon">
+                <div class="icon" data-aos="fade-right">
                     <img src="./../../../assets/icons/icon-location.png">
                 </div>
-                <span>{{changeLang.language === 'eng' ? contentText[2].eng : contentText[2].ger}}</span>
+                <span data-aos="fade-left">{{changeLang.language === 'eng' ? contentText[2].eng : contentText[2].ger}}</span>
             </div>
             <div class="topics">
-                <div class="icon">
+                <div class="icon" data-aos="fade-right">
                     <img src="./../../../assets/icons/icon-bulb.png">
                 </div>
-                <span>{{changeLang.language === 'eng' ? contentText[3].eng : contentText[3].ger}}</span>
+                <span data-aos="fade-left">{{changeLang.language === 'eng' ? contentText[3].eng : contentText[3].ger}}</span>
             </div>
             <div class="topics">
-                <div class="icon">
+                <div class="icon" data-aos="fade-right">
                     <img src="./../../../assets/icons/icon-puzzle.png">
                 </div>
-                <span>{{changeLang.language === 'eng' ? contentText[4].eng : contentText[4].ger}}</span>
+                <span data-aos="fade-left">{{changeLang.language === 'eng' ? contentText[4].eng : contentText[4].ger}}</span>
             </div>
         </div>
-        <div class="rightSide">
-            <img src="./../../../assets/img/portrait-face.png">
-            <div><img class="purpleDot" src="./../../../assets/img/purpleDot2.png"></div>
+        <div class="rightSide"  data-aos="fade-up-left" data-aos-delay="800">
+            <img src="./../../../assets/img/portrait-face.png">            
         </div>
-
     </div>
-    <div class="greenLine">&nbsp;</div>
+    <div class="greenLine" data-aos="fade-left" data-aos-delay="1000" data-aos-duration="1000">&nbsp;</div>
 </div>
 <div style="width: 100%; max-width: 1440px;">
 

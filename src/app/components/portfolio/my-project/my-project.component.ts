@@ -22,14 +22,11 @@ export class MyProjectComponent {
     github: "http://www.ebay.de"
   };
 
-actId:number = 0;
-colorActive:string = '#70E61C';
 
 @Output()changedProject = new EventEmitter<number>();
 
   changeProject(id:number) {
     this.changedProject.emit(id);
-    this.actId = id;
   }
 
 }

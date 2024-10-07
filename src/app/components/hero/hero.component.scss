@@ -1,5 +1,13 @@
 @import './../../../styles.scss';
 
+.iAm {
+    font-size: 60px !important;
+}
+
+.ichBin {
+    font-size: 40px !important;
+}
+
 h2 {
     margin-block-start: 0;
     margin-block-end: 0;
@@ -9,40 +17,60 @@ h2 {
     width: 100%;
     height: 600px;
     position: relative;
-    top: -1180px;
+    top: -1250px;
+}
+
+.spaceUnderNavigation {
+    height: 320px;
+    width: 100%;
+}
+
+.backgroundDots {
+    position: relative;
+    @include freePlacing($l: -250px);
+}
+
+.backDots {
+    position: relative;
+    left: -160px;
+    top: 90px;
+    width: 1000px;
 }
 
 .heroContent {
+    @include freePlacing($t: -950px);
     width: 100%;
     max-width: 1440px;
-    margin-top: 1600px;
-    @include dFlex($jc:space-between);
+    @include dFlex($jc: space-between);
+    box-sizing: border-box;
 }
 
 .mainPic {
     position: relative;
-    left: -100px;
+    @include dFlex();
 }
 
 .overlay {
-    @include freePlacing($t:-890px, $l:75px);
+    @include freePlacing($t: 0px, $l: -50px);
     height: 800px;
+}
+
+.textContainer {
+    position: relative;
+    left: -50px;
+    margin-right: -50px;
+    z-index: 8;
 }
 
 .welcomeText {
     position: relative;
-    top: -100px;
-    left: -300px;
     @include dFlex();
-    height: 35px;
     color: white;
-    width: 1000px;
 }
 
 #verticalText {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
-    margin-top: -800px;
     font-weight: 400;
     font-size: 64px;
     line-height: 76.8px;
@@ -51,14 +79,6 @@ h2 {
 
 .nameContainer {
     position: relative;
-    top: -400px;
-}
-
-.backDots {
-    position: relative;
-    left: -60px;
-    top: -70px;
-    width: 750px;
 }
 
 .jobTitle {
@@ -68,15 +88,17 @@ h2 {
     line-height: 60px;
 }
 
-.textContainer {
-    height: 200px;
+.btnBox {
+    height: 100px;
+    margin-top: 50px;
+    @include dFlex($ai: flex-start);
 }
 
 .socialIcons {
     width: 100%;
     z-index: 5;
     @include dFlex($jc: flex-start);
-    @include freePlacing($t:-1480px);    
+    @include freePlacing($t: -1550px);
 }
 
 .purpleLine {
@@ -88,7 +110,6 @@ h2 {
 }
 
 .btnPlace {
-    @include freePlacing($t:-400px, $l:120px);
     &:hover {
         left: 110px;
     }
@@ -101,10 +122,24 @@ h2 {
 
 .emailAdress {
     margin-left: 32px;
-    @include fontColor($size:23px, $weight:400, $liHi:27.6px);
+    @include fontColor($size: 23px, $weight: 400, $liHi: 27.6px);
 }
 
-@media (max-width: 1400px) {
+.scrollDown {
+    z-index: 2;
+    position: relative;
+    top: -1850px;
+    left: 700px;
+    width: 28px;
+    animation: bouncing 1.5s ease-in-out alternate infinite;
+}
+
+@keyframes bouncing {
+    0% {transform: translateY(0);}
+    100% {transform: translateY(30px);}
+}
+
+@media (max-width: 1450px) {
     #verticalText {
         font-size: 54px;
         padding-left: 10px;
@@ -115,29 +150,39 @@ h2 {
     }
 
     .welcomeText {
-        left: -350px;
+        left: -150px;
         width: 900px;
     }
 
-    .btnPlace {
-        left: 0;
-        &:hover {left: -7px;}  
+    .btnBox {
+        margin-left: -250px;
+    }
+
+    .backgroundDots {
+        position: relative;
+        @include freePlacing($l: 0px);
+        width: 100%;
+    }
+
+    .scrollDown {
+        left: 600px;
     }
 }
 
 @media (max-width: 1300px) {
     .overlay {
         height: 640px;
+        left: 0;
     }
-    
+
     .welcomeText {
-        left: -250px;
+        left: -50px;
         width: 600px;
     }
 
-    .btnPlace {
-        left: 0;
-    }  
+    .btnBox {
+        margin-left: 0px;
+    }
 
     .jobTitle {
         font-size: 45px;
@@ -147,17 +192,22 @@ h2 {
         font-size: 30px !important;
         line-height: 45px !important;
     }
-}
 
-@media (max-width: 1200px) {
-    .welcomeText {
-        left: -280px;
+    .iAm {
+        font-size: 45px !important;
     }
 
-    .btnPlace {
-        left: -30px;
-        &:hover {left: -37px;}
-    }    
+    .ichBin {
+        font-size: 30px !important;
+    }
+
+    .backDots {
+        top: 0px;
+    }
+
+    .scrollDown {
+        left: 500px;
+    }
 }
 
 @media (max-width: 1100px) {
@@ -171,60 +221,84 @@ h2 {
     }
 
     .welcomeText {
-        left: -380px;
+        left: -50px;
     }
 
     .btnPlace {
         left: -140px;
-        &:hover {left: -147px;}
+
+        &:hover {
+            left: -147px;
+        }
+    }
+
+    .scrollDown {
+        left: 450px;
     }
 }
 
 @media (max-width:1000px) {
     .heroContent {
-        @include dFlex($fd:column, $jc:center, $ai:center);
+        @include dFlex($fd: column, $jc: center, $ai: center);
         width: 100%;
-        margin-top: 1400px;
+        margin-top: 150px;
     }
 
     .mainPic {
         position: relative;
         left: 0;
-        top: 600px;        
     }
 
     .overlay {
         position: absolute;
-        height: 800px;
+        height: 650px;
+        left: -250px;
+        top: -30px;
     }
 
     #blueBow {
-        top: -800px;
+        top: -790px;
     }
 
-    .backDots {
-        position: relative;
-        left: -25px;
-        width: 900px;
-        top: -750px;
+    .btnBox {
+        margin-top: 20px;
+        margin-left: -35px;
     }
 
     .welcomeText {
-        left: -10px;
-        z-index:3;
-        top: 150px;
+        z-index: 3;
+        top: 0px;
+        margin-left: 30px;
     }
 
-    .btnPlace {
-        @include freePlacing($t:-170px, $l:220px);
-        &:hover {left: 212px;}
+    .textContainer {
+        position: relative;
+        left: 0px;
+        top: 670px;
+        margin-right: -50px;
     }
 
     .socialIcons {
-        top: -800px;
+        top: -780px;
         left: -50px;
     }
-    
+
+    .backgroundDots {
+        margin-top: 50px;
+        position: relative;
+        left: 0;
+        @include dFlex();
+    }
+
+    .backDots {
+        left: 0;
+        top: 0;
+        width: 900px;
+    }
+
+    .scrollDown {
+        display: none;
+    }
 }
 
 @media (max-width:825px) {
@@ -233,55 +307,59 @@ h2 {
     }
 }
 
-@media (max-width:800px) {
-    .mainPic {
-        top: 600px;        
-    }
-    .socialIcons {
-        top: -750px;
-    }
-}
-
 @media (max-width:700px) {
-    .mainPic {
-        top: 550px;        
-    }
-
-    .welcomeText {
-        left: -10px;
-        z-index:3;
-        top: -50px;
-    }
-
     .overlay {
-        height: 650px;
-        margin-left: 100px;
+        height: 550px;
+        left: -190px;
+        top: -7px;
+    }
+
+    .backgroundDots {
+        margin-top: 50px;
     }
 
     #blueBow {
-        top: -930px;
+        top: -790px;
         height: 400px;
     }
 
     .backDots {
+        left: 0;
+        top: 0;
         width: 900px;
-        top: -880px;
-    }
-
-    .btnPlace {
-        @include freePlacing($t:-380px, $l:220px);
     }
 
     .socialIcons {
-        top: -820px;
+        top: -680px;
     }
 }
 
 @media (max-width:600px) {
-    .welcomeText {
-        left: -10px;
-        z-index:3;
-        top: -120px;
+    .overlay {
+        left: -220px;
+        top: 100px;
+    }
+
+    #blueBow {
+        top: -650px;
+        height: 300px;
+    }
+
+    .backgroundDots {
+        margin-top: 50px;
+    }
+
+    .backDots {
+        top: 0;
+        width: 700px;
+    }
+
+    .iAm {
+        font-size: 35px !important;
+    }
+
+    .ichBin {
+        font-size: 25px !important;
     }
 
     #verticalText {
@@ -294,37 +372,19 @@ h2 {
         line-height: 45px;
     }
 
-    .btnPlace {
-        @include freePlacing($t:-460px, $l:220px);
-    }
-
     .socialIcons {
-        top: -900px;
-        left: -100px;
-    }
-
-    .resizer {
-        font-size: 24px !important;
+        top: -570px;
+        left: -150px;
     }
 }
 
 @media (max-width:500px) {
-    .mainPic {
-        top: 350px;        
+    .iAm {
+        font-size: 30px !important;
     }
 
-    .overlay {
-        height: 550px;
-        margin-left: 0;
-    }
-
-    #blueBow {
-        top: -915px;
-    }
-
-    .backDots {
-        width: 600px;
-        top: -850px;
+    .ichBin {
+        font-size: 20px !important;
     }
 
     #verticalText {
@@ -338,38 +398,38 @@ h2 {
         line-height: 30px;
     }
 
-    .socialIcons {
-        top: -830px;
-        left: -100px;
-    }
-
-    .btnPlace {
-        &:hover {left: 216px;}
-    }
-
-    .resizer {
-        font-size: 22px !important;
+    #blueBow {
+        top: -620px;
     }
 }
 
 @media (max-width:400px) {
-    .mainPic {
-        top: 250px;        
+    .iAm {
+        font-size: 25px !important;
+    }
+    
+    .ichBin {
+        font-size: 17px !important;
     }
 
     .overlay {
         height: 425px;
-        margin-left: 0;
+        left: -170px;
+        top: 300px;
     }
 
     #blueBow {
-        top: -1015px;
-        height: 300px;
+        top: -485px;
+        height: 200px;
+    }
+
+    .backgroundDots {
+        margin-top: 20px;
     }
 
     .backDots {
+        top: 0;
         width: 500px;
-        top: -850px;
     }
 
     #verticalText {
@@ -383,28 +443,20 @@ h2 {
         line-height: 30px;
     }
 
-    .welcomeText {
-        top: -250px;
-    }
-
-    .btnPlace {
-        @include freePlacing($t:-600px, $l:220px);
+    .textContainer {
+        top: 800px;
     }
 
     .socialIcons {
-        top: -900px;
+        top: -350px;
+        left: 0;
     }
 
     .purpleLine {
         width: 5vw;
-        min-width: 150px;
+        min-width: 50px;
         height: 5px;
         background-color: $colorPurple;
         margin-right: 12px;
-    }
-
-    .resizer {
-        font-size: 20px !important;
-        line-height: 25px !important;
     }
 }

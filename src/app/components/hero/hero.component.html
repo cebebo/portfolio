@@ -1,27 +1,35 @@
 <div id="top" class="containerBackground">
-
+    <div class="spaceUnderNavigation" style="color:#fff;">TEST</div>
+    <div class="backgroundDots">
+        <img class="backDots" src="./../../../assets/img/colorDots1.png">
+    </div>
     <div class="heroContent">
         <div class="mainPic">
-            <img class="backDots" src="./../../../assets/img/colorDots1.png">
+
             <img class="overlay" src="./../../../assets/img/portrait.png">
         </div>
         <div class="textContainer">
             <div class="welcomeText">
-                <h2 id="verticalText">{{changeLang.language === 'eng' ? contentText[0].eng : contentText[0].ger}}</h2>
+                <h2 id="verticalText" [ngClass]="changeLang.language === 'ger' ? 'ichBin' : 'iAm'">{{changeLang.language === 'eng' ? contentText[0].eng : contentText[0].ger}}</h2>
                 <div class="nameContainer">
                     <span class="topTitle fontPoppins">Christian Becker</span><br>
-                    <span class="jobTitle">{{changeLang.language === 'eng' ? contentText[1].eng : contentText[1].ger}}</span>
+                    <span class="jobTitle">{{changeLang.language === 'eng' ? contentText[1].eng :
+                        contentText[1].ger}}</span>
                 </div>
             </div>
-            <a href="#contact"><button class="btnPlace">{{changeLang.language === 'eng' ? contentText[2].eng : contentText[2].ger}}</button></a>
+            <div class="btnBox">
+                <a href="#contact"><button class="btnPlace">{{changeLang.language === 'eng' ? contentText[2].eng :
+                        contentText[2].ger}}</button></a>
+            </div>
         </div>
     </div>
     <img id="blueBow" src="./../../../assets/img/heroBackground.png">
-    <div class="socialIcons" id="aboutMe">
+    <div class="socialIcons">
         <div class="purpleLine"></div>
-        <div class="iconDots"><img src="./../../../assets/icons/icon-discord.png"></div>
-        <div class="iconDots"><img src="./../../../assets/icons/icon-email.png"></div>
-        <div class="iconDots"><img src="./../../../assets/icons/icon-linkedin.png"></div>
-        <span class="navLink emailAdress">mail&#64;becker-christian.de</span>
+        <div class="iconDots"><a href="https://github.com/cebebo" target="_blanc"><img src="./../../../assets/icons/icon-github.png"></a></div>
+        <div class="iconDots"><a href="mailto:mail@becker-christian.de"><img src="./../../../assets/icons/icon-email.png"></a></div>
+        <div class="iconDots"><a href="https://www.linkedin.com/in/christian-becker-a8b6a332b/" target="_blanc"><img src="./../../../assets/icons/icon-linkedin.png"></a></div>
+        <a href="mailto:mail@becker-christian.de"><span class="navLink emailAdress">mail&#64;becker-christian.de</span></a>
     </div>
+    <img src="./../../../assets/img/scroll-down.png" class="scrollDown">
 </div>

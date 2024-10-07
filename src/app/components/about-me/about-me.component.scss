@@ -1,25 +1,20 @@
 @import './../../../styles.scss';
 
 .aboutMeContent {
+    position: relative;
     width: 100%;
     max-width: 1440px;
-    margin-top: -550px;
     z-index: 4;
-    @include dFlex();
+    @include dFlex($ai: center);
+    margin-top: -800px;
 }
 
 .leftSide {
-    @include freePlacing($t: 180px, $l: 48px);
-    >span,
-    div {
-        @include incoming($name: fade-in-text);
-    }
+    margin-top: 128px;
 }
 
 .rightSide {
-    @include freePlacing($t: 500px, $l: 500px);
-    @include dFlex($fd: column);
-    @include incoming($name: fade-in-photo, $start: 250px, $end: 450px);
+    @include dFlex();
     >img {
         height: 450px;
         border-radius: 50%;
@@ -28,17 +23,21 @@
     }
 }
 
-@keyframes fade-in-photo {
-    @include keyframesValue($top: 500px, $left: 0px);
+.bookmark {
+    @include freePlacing($t:0px,$l:0);
 }
 
-@keyframes fade-in-line {
-    @include keyframesValue($top: -285px, $left: 1087px);
-}
+// @keyframes fade-in-photo {
+//     @include keyframesValue($top: 500px, $left: 0px);
+// }
 
-@keyframes fade-in-text {
-    to { opacity: 1; }
-}
+// @keyframes fade-in-line {
+//     @include keyframesValue($top: -285px, $left: 1087px);
+// }
+
+// @keyframes fade-in-text {
+//     to { opacity: 1; }
+// }
 
 .greenLine {
     width: 800px;
@@ -46,13 +45,17 @@
     background-color: $colorGreen;
     margin-right: 32px;
     z-index: 4;
-    @include freePlacing($t: -285px, $l: 1587px);
-    @include incoming($name: fade-in-line, $start: 250px, $end: 350px);
+    @include freePlacing($t: -340px, $l: 1135px);
+}
+
+.dotBack {
+    width:100%;
+    text-align: right;
+    margin-top: 100px;
 }
 
 .purpleDot {
-    @include freePlacing($t: -650px, $l: 330px);
-    height: 550px;
+    margin-right: -200px;
 }
 
 .topics {
@@ -68,45 +71,66 @@
 
     >img {
         height: 32px;
-        transition: height .25s ease-in-out;
+        transition: height .125s ease-in-out;
         &:hover {
             height: 48px;
         }
     }
 }
 
+@media (max-height: 500px) {
+    .aboutMeContent {
+        margin-top: -100px !important;
+    }
 
-@media(max-width: 1200px) {
+    .purpleDot {
+        opacity: 0;
+    }
+}
+// @media only screen 
+// and (min-device-height : 1000px) 
+// and (max-device-width : 1024px)
+// and (orientation : portrait) { 
+
+//     .aboutMeContent {
+//         margin-top: -1400px !important;
+//     }
+// }
+
+@media(max-width: 1500px) {
+    .leftSide {
+        margin-left: 16px;
+    }
+
     .rightSide {
-        @include incoming($name: fade-in-photo, $start: -200px, $end: -100px);
         >img {
-            height: 300px;
-            margin-top: -560px;
+            height: 350px;
+            margin-right: 32px;
         }
     }
 
-    .leftSide {
-        top: 80px;
-        left: 12px;
+    .greenLine {
+        @include freePlacing($t: -340px, $l: 1100px);
+    }
+}
+
+@media(max-width: 1300px) {
+    .aboutMeContent {
+        margin-top: -1000px;
     }
 
-    .topics {
-        width: 185%;
+    .bookmark {
+        @include freePlacing($t:-200px,$l:0);
     }
 }
 
 @media(max-width: 1100px) {
-    .topics {
-        width: 200%;
+    .aboutMeContent {
+        margin-top: -500px;
     }
 
-}
-
-@media(max-width: 1000px) {
-    .aboutMeContent {
-        margin-top: 400px;
-        z-index: 4;
-        @include dFlex($fd: column);
+    .bookmark {
+        @include freePlacing($t:300px,$l:0);
     }
 
     .rightSide {
@@ -127,10 +151,6 @@
         z-index: 3;
     }
 
-    .rightSide {
-        @include incoming($name: fade-in-photo, $start: -250px, $end: -150px);
-    }
-
     .icon {
         >img {
             &:hover {
@@ -142,13 +162,23 @@
 
 @media(max-width: 800px) {
     .aboutMeContent {
-        margin-top: 580px;
+        margin-top: -580px;
+    }
+
+    .bookmark {
+        @include freePlacing($t:250px,$l:0);
     }
 }
 
 @media(max-width: 700px) {
     .aboutMeContent {
-        margin-top: 180px;
+        margin-top: -650px;
+    }
+}
+
+@media(max-width: 600px) {
+    .aboutMeContent {
+        margin-top: -850px;
     }
 }
 
@@ -158,20 +188,31 @@
     }
 
     .leftSide {
-        top: 350px;
-        width: 90%;
+            width: 90%;
         >div {
             font-size: 12px;
         }
     }
+}
 
-    .aboutMeContent {
-        margin-top: -280px;
+@media(max-width: 700px) {
+    .bookmark {
+        @include freePlacing($t:200px,$l:0);
+    }
+}
+
+@media(max-width: 600px) {
+    .bookmark {
+        @include freePlacing($t:0px,$l:0);
     }
 }
 
 @media(max-width: 400px) {
     .aboutMeContent {
-        margin-top: -475px;
+        margin-top: -800px;
+    }
+
+    .bookmark {
+        @include freePlacing($t:100px,$l:0);
     }
 }

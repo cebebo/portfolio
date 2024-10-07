@@ -5,7 +5,17 @@ import { Injectable } from '@angular/core';
 })
 export class LanguageService {
 
-  constructor() { }
+  language:any = localStorage.getItem('language');
+  backupLink:string | null = localStorage.getItem('backupLink');
 
-  language:string = 'eng';
+  constructor() {
+    
+   }
+
+  
+changeLink(val:string) {
+  this.backupLink = val;
+  localStorage.setItem('backupLink', val);
+}
+
 }

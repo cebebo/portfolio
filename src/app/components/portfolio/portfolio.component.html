@@ -1,26 +1,29 @@
 <div class="containerBackground">
     <div class="bookmark" id="portfolio"></div>
-    <img class="greenDot" src="./../../../assets/img/greenDot1.png">
+    <div class="dotBack">
+        <img class="greenDot" src="./../../../assets/img/greenDot1.png">
+        <img class="purpleDot" src="./../../../assets/img/purpleDot1.png">
+    </div>
     <div class="portfolioContent">
-        <span class="topTitle titleBackground" style="margin-bottom: 100px;">Portfolio</span>
-            <p>{{changeLang.language === 'eng' ? contentText[0].eng : contentText[0].ger}}</p>
-        <div class="purpleLine">&nbsp;</div>
-        <div class="greenLine">&nbsp;</div>
+        <span class="topTitle titleBackground" style="margin-bottom: 100px;" data-aos="fade-left">Portfolio</span>
+            <p data-aos="fade-right">{{changeLang.language === 'eng' ? contentText[0].eng : contentText[0].ger}}</p>
+        <div class="purpleLine" data-aos="fade-left" data-aos-delay="500" data-aos-duration="500">&nbsp;</div>
+        <div class="greenLine" data-aos="fade-right" data-aos-delay="500" data-aos-duration="500">&nbsp;</div>
         <div class="showBoard">
-            <img class="preview" src="./../../../assets/img/{{activeApp.preview}}">
+            <img class="preview" src="./../../../assets/img/{{activeApp.preview}}" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="300">
             <div class="menu">
                 <div class="collection">
                     @for(icon of projectDataList.projectList; track icon.name) {
-                    <app-my-project [projectCollection]="icon" (changedProject)="updatePreview($event)"></app-my-project>
+                    <app-my-project [projectCollection]="icon" (changedProject)="updatePreview($event)" data-aos="flip-right" data-aos-duration="1500"></app-my-project>
                     }
                 </div>
                 <div class="details">
-                    <span class="name">{{activeApp.name}}</span>
-                    <span class="info">{{activeApp.info}}</span>
+                    <span class="name" data-aos="zoom-in-down" data-aos-delay="200">{{activeApp.name}}</span>
+                    <span class="info" data-aos="zoom-in-down" data-aos-delay="200">{{activeApp.info}}</span>
                     <div style="height: 100px;">
-                        <span class="description">{{changeLang.language === 'eng' ? activeApp.description[0] : activeApp.description[1]}}</span>
+                        <span class="description" data-aos="zoom-in-down" data-aos-delay="200">{{changeLang.language === 'eng' ? activeApp.description[0] : activeApp.description[1]}}</span>
                     </div>
-                    <div class="btnBox">
+                    <div class="btnBox" data-aos="zoom-out-up">
                         <a href="{{activeApp.link}}" target="_blank"><div class="buttonPurple">Live test</div></a>
                         <a href="{{activeApp.github}}" target="_blank"><div class="buttonBlue">Github</div></a>
                     </div>
@@ -28,5 +31,5 @@
             </div>
         </div> 
     </div>
-    <img class="purpleDot" src="./../../../assets/img/purpleDot1.png">
+    
 </div>

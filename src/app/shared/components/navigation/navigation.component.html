@@ -9,16 +9,16 @@
                     src="./../../../../assets/img/lang-ger.png">
             </div>
             <div class="buttons">
-                <a href="#aboutMe"><span class="navLink">{{changeLang.language === 'eng' ? menuText[0].eng :
+                <a href="#aboutMe"><span (click)="changeLang.changeLink('#top')" class="navLink">{{changeLang.language === 'eng' ? menuText[0].eng :
                         menuText[0].ger}}</span></a>
-                <a href="#mySkills"><span class="navLink">{{changeLang.language === 'eng' ? menuText[1].eng :
+                <a href="#mySkills"><span (click)="changeLang.changeLink('#top')" class="navLink">{{changeLang.language === 'eng' ? menuText[1].eng :
                         menuText[1].ger}}</span></a>
-                <a href="#portfolio"><span class="navLink">Portfolio</span></a>
+                <a href="#portfolio"><span (click)="changeLang.changeLink('#top')" class="navLink">Portfolio</span></a>
             </div>
         </div>
         <img (click)="openMenu()" class="mobileMenu" src="./../../../../assets/icons/menuOpen.png">
     </div>
-    <a href="#top">
+    <a href={{changeLang.backupLink}}>
         <div class="backUp">&uarr;</div>
     </a>
     <div class="menuOverlay" [ngClass]="{'openMobileMenu': mobileMenu}">
@@ -26,12 +26,12 @@
             <img (click)="closeMenu()" src="./../../../../assets/icons/menuClose.png">
         </div>
         <div class="options">
-            <a href="#aboutMe"><span (click)="closeMenu()" class="mobileLink">{{changeLang.language === 'eng' ? menuText[0].eng :
+            <a href="#aboutMe"><span (click)="changeLang.changeLink('#top'); closeMenu()" class="mobileLink">{{changeLang.language === 'eng' ? menuText[0].eng :
                     menuText[0].ger}}</span></a>
-            <a href="#mySkills"><span (click)="closeMenu()" class="mobileLink">{{changeLang.language === 'eng' ? menuText[1].eng :
+            <a href="#mySkills"><span (click)="changeLang.changeLink('#top'); closeMenu()" class="mobileLink">{{changeLang.language === 'eng' ? menuText[1].eng :
                     menuText[1].ger}}</span></a>
-            <a href="#portfolio"><span (click)="closeMenu()" class="mobileLink">Portfolio</span></a>
-            <a href="#contact"><span (click)="closeMenu()" class="mobileLink">{{changeLang.language === 'eng' ? "Contact" :
+            <a href="#portfolio"><span (click)="changeLang.changeLink('#top'); closeMenu()" class="mobileLink">Portfolio</span></a>
+            <a href="#contact"><span (click)="changeLang.changeLink('#top'); closeMenu()" class="mobileLink">{{changeLang.language === 'eng' ? "Contact" :
                     "Kontakt"}}</span></a>
         </div>
     </div>

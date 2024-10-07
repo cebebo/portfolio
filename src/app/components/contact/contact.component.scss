@@ -3,22 +3,11 @@
 .contactContent {
     width: 100%;
     max-width: 1440px;
-    margin-top: -500px;
     @include dFlex($fd: column);
 }
 
 .bookmark {
-    @include freePlacing($t:-500px,$l:0)
-}
-
-.topTitle {
-    @include incoming(fade-in-text);
-}
-
-@keyframes fade-in-text {
-    to {
-        opacity: 1;
-    }
+    @include freePlacing($t:-150px,$l:0)
 }
 
 .purpleLine {
@@ -28,11 +17,6 @@
     margin-right: 32px;
     z-index: 4;
     @include freePlacing($t: -450px, $l: -1520px);
-    @include incoming(slide-in-right, $start: 100px, $end: 350px);
-}
-
-@keyframes slide-in-right {
-    @include keyframesValue($top: -450px, $left: -1120px);
 }
 
 .container {
@@ -60,13 +44,11 @@ form {
 
 h2 {
     @include fontColor($weight: 700, $size: 32px, $liHi: 38.4px);
-    @include incoming(fade-in-text);
 }
 
 span {
     @include fontColor($weight: 400, $size: 16px, $liHi: 19.2px);
     margin-bottom: 16px;
-    @include incoming(fade-in-text);
 }
 
 input,
@@ -79,18 +61,9 @@ textarea {
     margin-bottom: 20px;
     transition: border .15s ease-in-out;
     color: white;
-    scale: 0.5;
-    @include incoming(slide-in-left);
-
+    scale: 1;
     &:hover {
         border: solid 1px $colorGreen;
-    }
-}
-
-@keyframes slide-in-left {
-    to {
-        scale: 1;
-        opacity: 1
     }
 }
 
@@ -121,28 +94,27 @@ input.ng-valid {
 
 .inputCheck {
     @include freePlacing($t: -56px, $l: 630px);
-    @include incoming(fade-in-text);
 }
 
 .policyLine {
     @include dFlex();
     width: 100%;
     margin-bottom: 32px;
-
     >span {
         margin-bottom: 0 !important;
     }
 }
 
 .checkPol {
-    width: 16px;
-    height: 16px;
+    width: 26px;
+    height: 20px;
     border-radius: 4px;
     border: 1px solid $colorPurple;
+    box-sizing: border-box;
     cursor: pointer;
     margin-right: 12px;
     transition: border .15s ease-in-out;
-
+    text-align: center;
     &:hover {
         border: 1px solid $colorGreen !important;
         background-color: #183771;
@@ -168,32 +140,63 @@ input.ng-valid {
     border: 0;
     background-color: $colorGreen;
     color: white;
-    transition: padding .25s, left .25s, background-color .25s ease-in-out;
+    transition: padding .125s, width .125s ease-in-out !important;
     z-index: 8;
-    scale: 0;
+    scale: 1;
     width: 250px !important;
     @include fontColor($weight: 400, $size: 23px, $liHi: 27.6px);
-    @include incoming($name: growing, $start: 20px, $end: 120px);
-
     &:hover {
         cursor: pointer;
         padding: 23px 38px 23px 38px;
         background-color: $colorPurple;
+        width: 270px !important;
     }
 }
 
 a {
     text-decoration: none;
     color: $colorPurple;
-
     &:hover {
         text-decoration: underline;
+    }
+}
+
+.enabled {
+    background-color: grey !important;
+    transition: none !important;
+    &:hover {
+        cursor:not-allowed;
+        padding: 15px 30px 15px 30px !important;
+    }
+}
+
+.success {
+    position: relative;
+    width: 100%;
+    height: 550px;
+    background-color: rgba(255,255,255,0.8);
+    border-radius: 8px;
+    @include dFlex();
+    margin-top: -550px;
+    z-index: 20;
+    >span {
+        font-size: 28px;
+        line-height: 36px;
+        text-align: center;
+        color: $mainColor;
+    }
+}
+
+@media (max-height: 500px) {
+    .contactContent {
+        margin-top: 2600px !important;
     }
 }
 
 @media(max-width: 1500px) {
     .contactContent {
         width: 95%;
+        margin-top: -100px;
     }
 
     input,
@@ -204,17 +207,15 @@ a {
     .inputCheck {
         @include freePlacing($t: -56px, $l: 517px);
     }
-}
 
-@media(max-width: 1500px) {
-    .contactContent {
-        margin-top: -475px;
+    .bookmark {
+        @include freePlacing($t:-200px,$l:0)
     }
 }
 
 @media(max-width: 1000px) {
     .contactContent {
-        margin-top: 600px;
+        margin-top: 800px;
     }
 
     .container {
@@ -241,11 +242,6 @@ a {
 
     .purpleLine {
         @include freePlacing($t: 625px, $l: -1520px);
-        @include incoming(slide-in-right, $start: 100px, $end: 350px);
-    }
-    
-    @keyframes slide-in-right {
-        @include keyframesValue($top: 625px, $left: -1120px);
     }
 
     .bookmark {
@@ -285,16 +281,22 @@ a {
     }
 
     .bookmark {
-        @include freePlacing($t:500px,$l:0)
+        @include freePlacing($t:200px,$l:0)
+    }
+}
+
+@media(max-width: 439px) {
+    .contactContent {
+        margin-top: 1150px;
+    }
+
+    .bookmark {
+        @include freePlacing($t:1050px,$l:0)
     }
 }
 
 @media(max-width: 400px) {
     .inputCheck {
         @include freePlacing($t: -56px, $l: 120px);
-    }
-
-    .bookmark {
-        @include freePlacing($t:480px,$l:0)
     }
 }

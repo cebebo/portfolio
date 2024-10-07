@@ -5,22 +5,22 @@
     <div class="mySkillsContent">
         <div class="leftSide">
             @for(icon of skillsDataList.skillsLabList; track icon.name) {
-            <app-skill-icons [skillsLab]="icon"></app-skill-icons>
+            <app-skill-icons [skillsLab]="icon" data-aos="zoom-in-right"></app-skill-icons>
             }
         </div>
         <div class="rightSide">
-            <span class="topTitle" style="margin-bottom: 64px;">{{changeLang.language === 'eng' ? contentText[0].eng :
+            <span class="topTitle" style="margin-bottom: 64px;" data-aos="fade-left">{{changeLang.language === 'eng' ? contentText[0].eng :
                 contentText[0].ger}}</span>
             <div class="text">
-                <span class="lowText">{{changeLang.language === 'eng' ? contentText[1].eng : contentText[1].ger}}</span>
-                <p>{{changeLang.language === 'eng' ? contentText[2].eng : contentText[2].ger}}</p>
-                <span class="lowText">{{changeLang.language === 'eng' ? contentText[3].eng : contentText[3].ger}}</span>
+                <span class="lowText" data-aos="fade-down-left">{{changeLang.language === 'eng' ? contentText[1].eng : contentText[1].ger}}</span>
+                <p data-aos="fade-down-left">{{changeLang.language === 'eng' ? contentText[2].eng : contentText[2].ger}}</p>
+                <span class="lowText" data-aos="fade-down-left">{{changeLang.language === 'eng' ? contentText[3].eng : contentText[3].ger}}</span>
                 <div style="height: 100px;">
-                    <a href="#contact"><button class="btnPlace">{{changeLang.language === 'eng' ? contentText[4].eng :
+                    <a href="#contact"><button class="btnPlace"  data-aos="zoom-out-up">{{changeLang.language === 'eng' ? contentText[4].eng :
                             contentText[4].ger}}</button></a>
                 </div>
             </div>
-            <div class="purpleLine">&nbsp;</div>
+            <div class="purpleLine" data-aos="fade-left" data-aos-delay="500" data-aos-duration="500">&nbsp;</div>
         </div>
     </div>
 </div>
