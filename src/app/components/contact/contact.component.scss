@@ -171,13 +171,13 @@ a {
 }
 
 .success {
-    position: relative;
-    width: 100%;
-    height: 550px;
+    position: fixed;
+    width: 80%;
+    height: 20vh;
     background-color: rgba(255,255,255,0.8);
     border-radius: 8px;
     @include dFlex();
-    margin-top: -550px;
+    top: 20%;
     z-index: 20;
     >span {
         font-size: 28px;
@@ -196,7 +196,7 @@ a {
 @media(max-width: 1500px) {
     .contactContent {
         width: 95%;
-        margin-top: -100px;
+        margin-top: -50px;
     }
 
     input,
@@ -213,9 +213,21 @@ a {
     }
 }
 
+@media(max-width: 1100px) {
+    .contactContent {
+        width: 95%;
+        margin-top: 125px;
+    }
+
+    .bookmark {
+        @include freePlacing($t:0px,$l:0)
+    }
+
+}
+
 @media(max-width: 1000px) {
     .contactContent {
-        margin-top: 800px;
+        margin-top: 1000px;
     }
 
     .container {
@@ -245,7 +257,7 @@ a {
     }
 
     .bookmark {
-        @include freePlacing($t:670px,$l:0)
+        @include freePlacing($t:830px,$l:0)
     }
 }
 
@@ -277,26 +289,36 @@ a {
     }
 
     .contactContent {
-        margin-top: 300px;
+        margin-top: 550px;
     }
 
     .bookmark {
-        @include freePlacing($t:200px,$l:0)
-    }
-}
-
-@media(max-width: 439px) {
-    .contactContent {
-        margin-top: 1150px;
-    }
-
-    .bookmark {
-        @include freePlacing($t:1050px,$l:0)
+        @include freePlacing($t:450px,$l:0)
     }
 }
 
 @media(max-width: 400px) {
     .inputCheck {
         @include freePlacing($t: -56px, $l: 120px);
+    }
+}
+
+@media(max-width: 439px) {
+    .contactContent {
+        margin-top: 700px;
+    }
+
+    .bookmark {
+        @include freePlacing($t:600px,$l:0)
+    }
+}
+
+@media(max-width: 350px) {
+    .contactContent {
+        margin-top: 800px;
+    }
+
+    .bookmark {
+        @include freePlacing($t:700px,$l:0)
     }
 }

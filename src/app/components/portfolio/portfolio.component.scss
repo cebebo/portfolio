@@ -180,10 +180,15 @@ p {
     }
 }
 
+@media(max-width:1379px) {
+    .purpleLine {
+       @include freePlacing($t: -225px, $l: 450px);
+   }
+}
 
 @media(max-width:1300px) {
      .purpleLine {
-        @include freePlacing($t: -195px, $l: 450px);
+        @include freePlacing($t: -205px, $l: 450px);
     }
 }
 
@@ -198,9 +203,20 @@ p {
     }
 }
 
+@media(max-width:1100px) {
+    .portfolioContent {
+        margin-top: -1000px;
+    }
+
+    .bookmark {
+        @include freePlacing($t:-100px,$l:0)
+    }
+
+}
+
 @media(max-width:1000px) {
     .portfolioContent {
-        margin-top: -500px;
+        margin-top: -350px;
     }
 
     .showBoard {
@@ -219,13 +235,25 @@ p {
     }
 
     .bookmark {
-        @include freePlacing($t:300px,$l:0)
+        @include freePlacing($t:450px,$l:0)
     }
 
     .purpleDot {
         margin-right: -400px;
         margin-top: 450px;
         height: 600px;
+    }
+}
+
+@media(max-width:1000px) {
+    .purpleLine {
+        @include freePlacing($t: -207px, $l: 450px);
+    }
+}
+
+@media(max-width:730px) {
+    .purpleLine {
+        @include freePlacing($t: -230px, $l: 450px);
     }
 }
 
@@ -242,8 +270,16 @@ p {
 }
 
 @media(max-width:600px) {
+    .portfolioContent {
+        margin-top: -450px;
+    }
+    
     .preview {
         width: 95%;
+    }
+
+    .bookmark {
+        @include freePlacing($t:350px,$l:0)
     }
 }
 
@@ -253,7 +289,7 @@ p {
         margin-left: -770px;
      }
     .portfolioContent {
-        margin-top: -920px;
+        margin-top: -750px;
     }
 
     .btnBox {
@@ -267,7 +303,7 @@ p {
     }
 
     .bookmark {
-        @include freePlacing($t:-100px,$l:0)
+        @include freePlacing($t:100px,$l:0)
     }
 
     .purpleLine {
@@ -275,9 +311,19 @@ p {
     }
 }
 
+@media(max-width:450px) {
+    .portfolioContent {
+        margin-top: -650px;
+    }
+
+    .bookmark {
+        @include freePlacing($t:200px,$l:0)
+    }
+}
+
 @media(max-width:439px) {
     .portfolioContent {
-        margin-top: -250px;
+        margin-top: -550px;
     }
 
     .purpleDot {
@@ -285,14 +331,28 @@ p {
     }
 
     .bookmark {
-        @include freePlacing($t:600px,$l:0)
+        @include freePlacing($t:300px,$l:0)
+    }
+}
+
+@media(max-width:400px) {
+    .portfolioContent {
+        margin-top: -500px;
+    }
+
+    .bookmark {
+        @include freePlacing($t:350px,$l:0)
     }
 }
 
 @media(max-width:350px) {
     .portfolioContent {
-        margin-top: -420px;
-    }
+        margin-top: -400px;
+    }    
 
-    
+    .bookmark {
+        @include freePlacing($t:480px,$l:0)
+    }
 }
+
+

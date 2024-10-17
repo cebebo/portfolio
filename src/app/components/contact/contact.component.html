@@ -72,12 +72,13 @@
                             value="{{changeLang.language === 'eng' ? contentText[7].eng : contentText[7].ger}}">
                     </div>
                 </form>
-                @if (success) {
-                <div class="success">
-                    <span>{{changeLang.language === 'eng' ? contentText[11].eng : contentText[11].ger}}</span>
-                </div>
-                }
+
             </div>
         </div>
     </div>
+    @if (success) {
+    <div class="success">
+        <span>{{changeLang.language === 'eng' ? contentText[11].eng : contentText[11].ger}}</span>
+    </div>
+    } @else {}
 </div>

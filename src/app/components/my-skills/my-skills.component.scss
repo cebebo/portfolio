@@ -92,7 +92,7 @@ p {
 
 @media(max-width: 1300px) {
     .mySkillsContent {
-        margin-top: -100px;
+        margin-top: 0;
     }
 
     .bookmark {
@@ -100,9 +100,32 @@ p {
     }
 }
 
+@media(max-width: 1137px) {
+    .purpleLine {
+        @include freePlacing($t: -415px, $l: 580px);
+    }
+}
+
+@media(max-width: 1055px) {
+    .purpleLine {
+        @include freePlacing($t: -450px, $l: 580px);
+    }
+}
+
+@media(max-width: 1100px) {
+    .mySkillsContent {
+        margin-top: 100px;
+    }
+
+    .bookmark {
+        @include freePlacing($t:0px,$l:0)
+    }
+
+}
+
 @media(max-width: 1000px) {
     .mySkillsContent {
-        margin-top: 600px;
+        margin-top: 725px;
         @include dFlex($fd:column-reverse, $jc: space-between);
     }
 
@@ -142,7 +165,7 @@ p {
     }
 
     .bookmark {
-        @include freePlacing($t:160px,$l:0)
+        @include freePlacing($t:300px,$l:0)
     }
 }
 
@@ -165,9 +188,15 @@ p {
     }
 }
 
+@media(max-width: 740px) {
+    .purpleLine {
+        @include freePlacing($t: -850px, $l: 580px);
+    }
+}
+
 @media(max-width: 650px) {
     .mySkillsContent {
-        margin-top: 550px;
+        margin-top: 700px;
     }
 
     .leftSide {
@@ -190,9 +219,25 @@ p {
 
 }
 
+@media(max-width: 600px) {
+    .mySkillsContent {
+        margin-top: 600px;
+    }
+
+    .purpleLine {
+        @include freePlacing($t: -860px, $l: 580px);
+    }
+}
+
+@media(max-width: 555px) {
+    .purpleLine {
+        @include freePlacing($t: -895px, $l: 580px);
+    }
+}
+
 @media(max-width: 500px) {
     .mySkillsContent {
-        margin-top: 250px;
+        margin-top: 300px;
     }
 
     .bookmark {
@@ -205,6 +250,10 @@ p {
 }
 
 @media(max-width: 450px) {
+    .mySkillsContent {
+        margin-top: 350px;
+    }
+
     .leftSide {
         margin-top: -550px;
     }
@@ -216,13 +265,13 @@ p {
     }
 
     .bookmark {
-        @include freePlacing($t:-220px,$l:0)
+        @include freePlacing($t:-120px,$l:0)
     }
 }
 
 @media(max-width: 439px) {
     .mySkillsContent {
-        margin-top: 675px;
+        margin-top: 470px;
     }
 
     .leftSide {
@@ -236,12 +285,25 @@ p {
     }
 
     .bookmark {
-        @include freePlacing($t:180px,$l:0)
+        @include freePlacing($t:20px,$l:0)
+    }
+}
+
+@media(max-width: 400px) {
+    .mySkillsContent {
+        margin-top: 540px;
+    }
+    .bookmark {
+        @include freePlacing($t:100px,$l:0)
     }
 }
 
 @media(max-width: 350px) {
     .mySkillsContent {
-        margin-top: 700px;
+        margin-top: 600px;
+    }
+
+    .bookmark {
+        @include freePlacing($t:150px,$l:0)
     }
 }

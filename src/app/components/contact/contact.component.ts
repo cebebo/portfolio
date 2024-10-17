@@ -83,7 +83,7 @@ export class ContactComponent {
     message: ""
   }
 
-  mailTest = false;
+  mailTest = true;
 
   post = {
     endPoint: 'https://www.becker-christian.de/sndml.php',
@@ -113,12 +113,9 @@ export class ContactComponent {
           complete: () => console.info('send post complete'),
         });
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest && this.checkPolicy) {
-
       ngForm.resetForm();
       this.success = true;
-      setTimeout(() => {
-        this.success = false;
-      }, 5000);
+      setTimeout(() => { this.success = false; }, 2000);
       this.checkPolicy = false;
       this.validCheck = false;
     }

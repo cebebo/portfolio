@@ -116,21 +116,21 @@
 
 @media(max-width: 1300px) {
     .aboutMeContent {
-        margin-top: -1000px;
+        margin-top: -900px;
     }
 
     .bookmark {
-        @include freePlacing($t:-200px,$l:0);
+        @include freePlacing($t:-50px,$l:0);
     }
 }
 
 @media(max-width: 1100px) {
     .aboutMeContent {
-        margin-top: -500px;
+        margin-top: -800px;
     }
 
     .bookmark {
-        @include freePlacing($t:300px,$l:0);
+        @include freePlacing($t:50px,$l:0);
     }
 
     .rightSide {
@@ -160,6 +160,17 @@
     }
 }
 
+@media(max-width: 1000px) {
+    .aboutMeContent {
+        margin-top: -450px;
+    }
+
+    .bookmark {
+        @include freePlacing($t:350px,$l:0)
+    }
+
+}
+
 @media(max-width: 800px) {
     .aboutMeContent {
         margin-top: -580px;
@@ -174,11 +185,19 @@
     .aboutMeContent {
         margin-top: -650px;
     }
+    
+    .bookmark {
+        @include freePlacing($t:200px,$l:0);
+    }
 }
 
 @media(max-width: 600px) {
     .aboutMeContent {
         margin-top: -850px;
+    }
+
+    .bookmark {
+        @include freePlacing($t:0px,$l:0);
     }
 }
 
@@ -195,24 +214,12 @@
     }
 }
 
-@media(max-width: 700px) {
-    .bookmark {
-        @include freePlacing($t:200px,$l:0);
-    }
-}
-
-@media(max-width: 600px) {
-    .bookmark {
-        @include freePlacing($t:0px,$l:0);
-    }
-}
-
 @media(max-width: 400px) {
     .aboutMeContent {
-        margin-top: -800px;
+        margin-top: -900px;
     }
 
     .bookmark {
-        @include freePlacing($t:100px,$l:0);
+        @include freePlacing($t:0px,$l:0);
     }
 }

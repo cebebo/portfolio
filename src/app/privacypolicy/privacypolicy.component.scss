@@ -1,6 +1,12 @@
 @import './../../styles.scss';
 
+.cont {
+    @include dFlex();
+}
+
 .content {
+    max-width: 1440px;
+    width: 100%;
     margin: 0;
     background-color: $mainColor;
     color: white;
