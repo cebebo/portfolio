@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component, inject, Renderer2 } from '@angular/core';
 import { LanguageService } from '../../../language.service';
 import { ScrollService } from '../../../scroll.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-navigation',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './navigation.component.html',
   styleUrl: './navigation.component.scss'
 })
@@ -40,7 +41,6 @@ export class NavigationComponent {
       localStorage.setItem('language', 'eng') 
       this.changeLang.language = 'eng';
     };
-    console.log(localStorage.getItem('language') + ' und ' + this.changeLang.language);
   }
 
   openMenu() {

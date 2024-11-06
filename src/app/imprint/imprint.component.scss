@@ -1,6 +1,7 @@
 @import './../../styles.scss';
 
 .content {
+    height: 70vh;
     text-align: center;
     margin: 0;
     background-color: $mainColor;
@@ -8,5 +9,5 @@
     padding-top: 150px;
     padding-left: 32px;
     padding-right: 32px;
-    padding-bottom: 132px;
+    
 }

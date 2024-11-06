@@ -6,16 +6,16 @@ import { Injectable } from '@angular/core';
 export class LanguageService {
 
   language:any = localStorage.getItem('language');
-  backupLink:string | null = localStorage.getItem('backupLink');
+  backupLink:boolean = true;
 
   constructor() {
     
    }
 
+   popup = false;
   
-changeLink(val:string) {
+changeLink(val:boolean) {
   this.backupLink = val;
-  localStorage.setItem('backupLink', val);
 }
 
 }

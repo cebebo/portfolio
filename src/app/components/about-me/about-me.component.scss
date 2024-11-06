@@ -27,18 +27,6 @@
     @include freePlacing($t:0px,$l:0);
 }
 
-// @keyframes fade-in-photo {
-//     @include keyframesValue($top: 500px, $left: 0px);
-// }
-
-// @keyframes fade-in-line {
-//     @include keyframesValue($top: -285px, $left: 1087px);
-// }
-
-// @keyframes fade-in-text {
-//     to { opacity: 1; }
-// }
-
 .greenLine {
     width: 800px;
     height: 5px;
@@ -78,25 +66,6 @@
     }
 }
 
-@media (max-height: 500px) {
-    .aboutMeContent {
-        margin-top: -100px !important;
-    }
-
-    .purpleDot {
-        opacity: 0;
-    }
-}
-// @media only screen 
-// and (min-device-height : 1000px) 
-// and (max-device-width : 1024px)
-// and (orientation : portrait) { 
-
-//     .aboutMeContent {
-//         margin-top: -1400px !important;
-//     }
-// }
-
 @media(max-width: 1500px) {
     .leftSide {
         margin-left: 16px;
@@ -116,23 +85,15 @@
 
 @media(max-width: 1300px) {
     .aboutMeContent {
-        margin-top: -900px;
+        margin-top: -960px;
     }
 
     .bookmark {
-        @include freePlacing($t:-50px,$l:0);
+        @include freePlacing($t:-110px,$l:0);
     }
 }
 
 @media(max-width: 1100px) {
-    .aboutMeContent {
-        margin-top: -800px;
-    }
-
-    .bookmark {
-        @include freePlacing($t:50px,$l:0);
-    }
-
     .rightSide {
         >img {
             display: none;
@@ -162,22 +123,32 @@
 
 @media(max-width: 1000px) {
     .aboutMeContent {
-        margin-top: -450px;
+        margin-top: -600px;
     }
 
     .bookmark {
-        @include freePlacing($t:350px,$l:0)
+        @include freePlacing($t:200px,$l:0)
     }
 
 }
 
-@media(max-width: 800px) {
+@media(max-width: 900px) {
     .aboutMeContent {
-        margin-top: -580px;
+        margin-top: -680px;
     }
 
     .bookmark {
-        @include freePlacing($t:250px,$l:0);
+        @include freePlacing($t:150px,$l:0);
+    }
+}
+
+@media(max-width: 800px) {
+    .aboutMeContent {
+        margin-top: -780px;
+    }
+
+    .bookmark {
+        @include freePlacing($t:50px,$l:0);
     }
 }
 
@@ -216,10 +187,93 @@
 
 @media(max-width: 400px) {
     .aboutMeContent {
-        margin-top: -900px;
+        margin-top: -1000px;
     }
 
     .bookmark {
-        @include freePlacing($t:0px,$l:0);
+        @include freePlacing($t:-100px,$l:0);
+    }
+}
+
+@media(min-width: 3000px) {
+
+    .greenLine {
+        width: 2000px;
+        left: 1735px;
+    }
+}
+
+@media (min-height:1100px) {
+    .aboutMeContent {
+        margin-top: -1000px !important;
+    }
+
+    .bookmark {
+        @include freePlacing($t:-150px,$l:0);
+    }
+}
+
+@media (min-height:1200px) {
+    .aboutMeContent {
+        margin-top: -800px !important;
+    }
+    .bookmark {
+        @include freePlacing($t:-50px,$l:0);
+    }
+}
+
+@media (min-height:1400px) {
+    .aboutMeContent {
+        margin-top: -1000px !important;
+    }
+    .bookmark {
+        @include freePlacing($t:-250px,$l:0);
+    }
+}
+
+@media (min-height:1600px) {
+    .aboutMeContent {
+        margin-top: -1200px !important;
+    }
+    .bookmark {
+        @include freePlacing($t:-450px,$l:0);
+    }
+}
+
+@media (max-width:400px) and (max-height: 850px) {
+    .aboutMeContent {
+        margin-top: -850px;
+    }
+
+    .bookmark {
+        @include freePlacing($t:50px,$l:0);
+    }
+}
+
+@media (max-width:400px) and (max-height: 700px) {
+    .aboutMeContent {
+        margin-top: -700px;
+    }
+
+    .bookmark {
+        @include freePlacing($t:200px,$l:0);
+    }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+    .aboutMeContent {
+        margin-top: -200px !important;
+    }
+
+    .purpleDot {
+        opacity: 0;
+    }
+
+    .leftSide {
+        margin-top: 200px !important;
+    }
+
+    .bookmark {
+        top: 700px;
     }
 }

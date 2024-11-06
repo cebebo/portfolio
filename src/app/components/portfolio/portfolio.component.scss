@@ -3,12 +3,12 @@
 .portfolioContent {
     width: 100%;
     max-width: 1440px;
-    margin-top: -1200px;
+    margin-top: -1100px;
     @include dFlex($fd: column);
 }
 
 .bookmark {
-    @include freePlacing($t:-300px,$l:0)
+    @include freePlacing($t:-170px,$l:0)
 }
 
 .dotBack {
@@ -163,16 +163,6 @@ p {
     height: 800px;
 }
 
-@media (max-height: 500px) {
-    .portfolioContent {
-        margin-top: 800px !important;
-    }
-
-    .greenDot {
-        opacity: 0;
-    }
-}
-
 @media(max-width:1400px) {
     p {
         padding-left: 16px;
@@ -216,7 +206,7 @@ p {
 
 @media(max-width:1000px) {
     .portfolioContent {
-        margin-top: -350px;
+        margin-top: -550px;
     }
 
     .showBoard {
@@ -235,7 +225,7 @@ p {
     }
 
     .bookmark {
-        @include freePlacing($t:450px,$l:0)
+        @include freePlacing($t:250px,$l:0)
     }
 
     .purpleDot {
@@ -243,11 +233,15 @@ p {
         margin-top: 450px;
         height: 600px;
     }
-}
-
-@media(max-width:1000px) {
+    
     .purpleLine {
         @include freePlacing($t: -207px, $l: 450px);
+    }
+}
+
+@media(max-width:741px) {
+    .purpleLine {
+        @include freePlacing($t: -235px, $l: 450px);
     }
 }
 
@@ -271,15 +265,19 @@ p {
 
 @media(max-width:600px) {
     .portfolioContent {
-        margin-top: -450px;
+        margin-top: -650px;
     }
-    
+
+    .bookmark {
+        @include freePlacing($t:150px,$l:0)
+    }
+
     .preview {
         width: 95%;
     }
 
-    .bookmark {
-        @include freePlacing($t:350px,$l:0)
+    .purpleLine {
+        @include freePlacing($t: -220px, $l: 450px);
     }
 }
 
@@ -322,37 +320,46 @@ p {
 }
 
 @media(max-width:439px) {
-    .portfolioContent {
-        margin-top: -550px;
-    }
-
     .purpleDot {
         margin-right: -450px;
     }
+}
+
+@media(max-width:350px) {
+    .portfolioContent {
+        margin-top: -500px;
+    }    
+
+    .bookmark {
+        @include freePlacing($t:380px,$l:0)
+    }
+}
+
+@media(max-width:347px) {
+    .portfolioContent {
+        margin-top: -550px;
+    }    
 
     .bookmark {
         @include freePlacing($t:300px,$l:0)
     }
 }
 
-@media(max-width:400px) {
-    .portfolioContent {
-        margin-top: -500px;
+@media(min-width: 2600px) {
+
+    .greenLine {
+        width: 2000px;
+        left: -1700px;
     }
 
-    .bookmark {
-        @include freePlacing($t:350px,$l:0)
-    }
-}
-
-@media(max-width:350px) {
-    .portfolioContent {
-        margin-top: -400px;
-    }    
-
-    .bookmark {
-        @include freePlacing($t:480px,$l:0)
+    .purpleLine {
+        width: 3300px;
+        left: 1200px;
     }
 }
 
-
+@media (orientation: landscape) and (max-height: 500px) {
+    .greenDot {
+        opacity: 0;
+    }
+}

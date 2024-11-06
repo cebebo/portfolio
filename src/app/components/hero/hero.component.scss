@@ -1,5 +1,9 @@
 @import './../../../styles.scss';
 
+.fullVH {
+    height: 100vh;
+}
+
 .iAm {
     font-size: 60px !important;
 }
@@ -251,13 +255,14 @@ h2 {
 
     .overlay {
         position: absolute;
-        height: 650px;
+        height: 600px;
         left: -250px;
-        top: -30px;
+        top: -60px;
     }
 
     #blueBow {
-        top: -790px;
+        top: -800px;
+        height: 400px;
     }
 
     .btnBox {
@@ -274,12 +279,12 @@ h2 {
     .textContainer {
         position: relative;
         left: 0px;
-        top: 670px;
+        top: 575px;
         margin-right: -50px;
     }
 
     .socialIcons {
-        top: -780px;
+        top: -700px;
         left: -50px;
     }
 
@@ -376,6 +381,10 @@ h2 {
         top: -570px;
         left: -150px;
     }
+
+    .textContainer {
+        top: 660px;
+    }
 }
 
 @media (max-width:500px) {
@@ -458,5 +467,39 @@ h2 {
         height: 5px;
         background-color: $colorPurple;
         margin-right: 12px;
+    }
+}
+
+@media (min-height:1200px) {
+    .overlay {
+        height: 1000px;
+        left: -130px;
+    }
+
+    .backgroundDots {
+        left: -325px;
+    }
+
+    .backDots {
+        width: 1150px;
+    }
+
+    .textContainer {
+        left: -150px;
+        margin-right: -175px;
+    }
+
+    .heroContent {
+        top: -1050px;
+    }
+
+    #blueBow {
+        top: -1300px;
+    }
+}
+
+@media(min-width: 3000px) {
+    .purpleLine {
+        width: 35vw;
     }
 }

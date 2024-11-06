@@ -1,6 +1,27 @@
+@if (popup){
+<div class="popup">
+    {{changeLang.language === 'eng' ? "I have a special interest in learning:" : "Weiterbilden möchte ich mich in:"}}
+    <div class="popupIcons">
+        <img src="./../../../../assets/icons/icon-linux.png">
+        <img src="./../../../../assets/icons/icon-py.png">
+        <img src="./../../../../assets/icons/icon-django.png">
+        <img src="./../../../../assets/icons/icon-sql.png">
+        <img src="./../../../../assets/icons/icon-redis.png">
+        <img src="./../../../../assets/icons/icon-psql.png">
+        <img src="./../../../../assets/icons/icon-docker.png">
+        <img src="./../../../../assets/icons/icon-cloud.png">
+        <img src="./../../../../assets/icons/icon-heroku.png">
+    </div>
+</div>
+<div class="triangle"></div>
+}
 <div class="container">
-    <div class="iconBox">
-        <img src="./../../../../assets/icons/{{skillsLab.img}}">
+    <div class="iconBox" (mouseenter)="checkAndExecute(skillsLab.name, 1)"
+            (mouseleave)="checkAndExecute(skillsLab.name, 2)">
+        <img src="assets/icons/{{skillsLab.img}}">
+
     </div>
     <span style="margin-top: 12px;">{{skillsLab.name}}</span>
-</div> 
+
+</div>
+

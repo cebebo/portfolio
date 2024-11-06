@@ -1,17 +1,17 @@
-<footer>
+<footer [ngClass]="!changeLang.backupLink ? 'footerForImprint' : 'footer'">
     <div class="greenLine"></div>
     <div class="footerContent">
         <div class="logo">
-            <img src="./../../../../assets/img/title.png">
+            <img src="assets/img/title.png">
             <div>
-                <a href="imprint" (click)="changeLang.changeLink('imprint')"><span class="navLink">{{changeLang.language === 'eng' ? "Imprint" : "Impressum"}}</span></a>
+                <a routerLink="/imprint" (click)="changeLang.changeLink(false)"><span class="navLink">{{changeLang.language === 'eng' ? "Imprint" : "Impressum"}}</span></a>
             </div>
         </div>
         <span>&#169; Christian Becker 2024</span>
         <div class="socialIcons">
-            <div class="iconDots"><a href="https://github.com/cebebo" target="_blanc"><img src="./../../../../assets/icons/icon-github.png"></a></div>
-            <div class="iconDots"><a href="mailto:mail@becker-christian.de"><img src="./../../../../assets/icons/icon-email.png"></a></div>
-            <div class="iconDots"><a href="https://www.linkedin.com/in/christian-becker-a8b6a332b/" target="_blanc"><img src="./../../../../assets/icons/icon-linkedin.png"></a></div>
+            <div class="iconDots"><a href="https://github.com/cebebo" target="_blanc"><img src="assets/icons/icon-github.png"></a></div>
+            <div class="iconDots"><a href="mailto:mail@becker-christian.de"><img src="assets/icons/icon-email.png"></a></div>
+            <div class="iconDots"><a href="https://www.linkedin.com/in/christian-becker-a8b6a332b/" target="_blanc"><img src="assets/icons/icon-linkedin.png"></a></div>
         </div>
     </div>
-</footer> 
+</footer>  

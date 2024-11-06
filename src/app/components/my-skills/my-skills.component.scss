@@ -15,7 +15,7 @@
     width: 600px;
     @include dFlex($jc: space-evenly);
     flex-wrap: wrap;
-    z-index: 1;
+    z-index: 10;
 }
 
 .rightSide {
@@ -65,25 +65,6 @@ p {
     @include freePlacing($t: -400px, $l: 440px);
 }
 
-@media (max-height: 500px) {
-    .mySkillsContent {
-        margin-top: 1500px !important;
-    }
-
-    .leftSide {
-        top: -320px !important;
-        z-index: 8;
-    }
-
-    .text p {
-        margin-top: 350px !important;
-    }
-
-    .leftSide {
-        margin-top: -350px !important;
-    }
-}
-
 @media(max-width: 1500px) {
     .rightSide {
         margin-right: 32px;
@@ -92,7 +73,7 @@ p {
 
 @media(max-width: 1300px) {
     .mySkillsContent {
-        margin-top: 0;
+        margin-top: -70px;
     }
 
     .bookmark {
@@ -114,18 +95,17 @@ p {
 
 @media(max-width: 1100px) {
     .mySkillsContent {
-        margin-top: 100px;
+        margin-top: 50px;
     }
 
     .bookmark {
-        @include freePlacing($t:0px,$l:0)
+        @include freePlacing($t:-50px,$l:0)
     }
-
 }
 
 @media(max-width: 1000px) {
     .mySkillsContent {
-        margin-top: 725px;
+        margin-top: 300px;
         @include dFlex($fd:column-reverse, $jc: space-between);
     }
 
@@ -160,12 +140,8 @@ p {
         @include freePlacing($t: -820px, $l: 580px);
     }
 
-    @keyframes fade-in-right {
-        @include keyframesValue($top: -444px, $left: 640px);
-    }
-
     .bookmark {
-        @include freePlacing($t:300px,$l:0)
+        @include freePlacing($t:-100px,$l:0)
     }
 }
 
@@ -195,10 +171,6 @@ p {
 }
 
 @media(max-width: 650px) {
-    .mySkillsContent {
-        margin-top: 700px;
-    }
-
     .leftSide {
         margin-top: -450px;
     }
@@ -208,28 +180,19 @@ p {
             margin-top: 450px;
         }
     }
-
-    .purpleLine {
-        @include freePlacing($t: -850px, $l: 580px);
-    }
-
-    .bookmark {
-        @include freePlacing($t:150px,$l:0)
-    }
-
 }
 
 @media(max-width: 600px) {
-    .mySkillsContent {
-        margin-top: 600px;
-    }
-
-    .purpleLine {
+     .purpleLine {
         @include freePlacing($t: -860px, $l: 580px);
     }
 }
 
-@media(max-width: 555px) {
+@media(max-width: 566px) {
+    .bookmark {
+        @include freePlacing($t:-150px,$l:0)
+    }
+    
     .purpleLine {
         @include freePlacing($t: -895px, $l: 580px);
     }
@@ -238,10 +201,6 @@ p {
 @media(max-width: 500px) {
     .mySkillsContent {
         margin-top: 300px;
-    }
-
-    .bookmark {
-        @include freePlacing($t:-150px,$l:0)
     }
 
     .purpleLine {
@@ -271,7 +230,7 @@ p {
 
 @media(max-width: 439px) {
     .mySkillsContent {
-        margin-top: 470px;
+        margin-top: 350px;
     }
 
     .leftSide {
@@ -285,25 +244,20 @@ p {
     }
 
     .bookmark {
-        @include freePlacing($t:20px,$l:0)
+        @include freePlacing($t:-120px,$l:0)
     }
 }
 
-@media(max-width: 400px) {
-    .mySkillsContent {
-        margin-top: 540px;
-    }
-    .bookmark {
-        @include freePlacing($t:100px,$l:0)
+@media(min-width: 2350px) {
+
+    .purpleLine {
+        width: 2300px;
+        left: 1400px;
     }
 }
 
-@media(max-width: 350px) {
-    .mySkillsContent {
-        margin-top: 600px;
-    }
-
-    .bookmark {
-        @include freePlacing($t:150px,$l:0)
+@media (orientation: landscape) and (max-height: 500px) {
+    .purpleLine {
+        display: none !important;
     }
 }

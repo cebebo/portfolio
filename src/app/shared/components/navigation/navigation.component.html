@@ -1,37 +1,39 @@
 <header>
     <div class="navigationBar">
-        <a href="#top"><img class="title" src="./../../../../assets/img/title.png"></a>
+        <a href="#top"><img class="title" src="assets/img/title.png"></a>
         <div class="navOptions">
             <div class="flags" (click)="changeLanguage()">
-                <img class="eng" [ngClass]="{'primary': changeLang.language == 'eng'}"
-                    src="./../../../../assets/img/lang-eng.png">
-                <img class="ger" [ngClass]="{'primary': changeLang.language == 'ger'}"
-                    src="./../../../../assets/img/lang-ger.png">
+                <img class="eng" [ngClass]="{'primary': changeLang.language == 'eng'}" src="assets/img/lang-eng.png">
+                <img class="ger" [ngClass]="{'primary': changeLang.language == 'ger'}" src="assets/img/lang-ger.png">
             </div>
             <div class="buttons">
-                <a href="#aboutMe"><span (click)="changeLang.changeLink('#top')" class="navLink">{{changeLang.language === 'eng' ? menuText[0].eng :
+                <a href="#aboutMe"><span (click)="changeLang.changeLink(true)" class="navLink">{{changeLang.language
+                        === 'eng' ? menuText[0].eng :
                         menuText[0].ger}}</span></a>
-                <a href="#mySkills"><span (click)="changeLang.changeLink('#top')" class="navLink">{{changeLang.language === 'eng' ? menuText[1].eng :
+                <a href="#mySkills"><span (click)="changeLang.changeLink(true)" class="navLink">{{changeLang.language
+                        === 'eng' ? menuText[1].eng :
                         menuText[1].ger}}</span></a>
-                <a href="#portfolio"><span (click)="changeLang.changeLink('#top')" class="navLink">Portfolio</span></a>
+                <a href="#portfolio"><span (click)="changeLang.changeLink(true)" class="navLink">Portfolio</span></a>
             </div>
         </div>
-        <img (click)="openMenu()" class="mobileMenu" src="./../../../../assets/icons/menuOpen.png">
+        <img (click)="openMenu()" class="mobileMenu" src="assets/icons/menuOpen.png">
     </div>
-    <a href={{changeLang.backupLink}}>
-        <div class="backUp">&uarr;</div>
-    </a>
+    @if(changeLang.backupLink){<a href="#top"><div class="backUp">&uarr;</div></a>}
     <div class="menuOverlay" [ngClass]="{'openMobileMenu': mobileMenu}">
         <div class="closer">
-            <img (click)="closeMenu()" src="./../../../../assets/icons/menuClose.png">
+            <img (click)="closeMenu()" src="assets/icons/menuClose.png">
         </div>
         <div class="options">
-            <a href="#aboutMe"><span (click)="changeLang.changeLink('#top'); closeMenu()" class="mobileLink">{{changeLang.language === 'eng' ? menuText[0].eng :
+            <a href="#aboutMe"><span (click)="changeLang.changeLink(true); closeMenu()"
+                    class="mobileLink">{{changeLang.language === 'eng' ? menuText[0].eng :
                     menuText[0].ger}}</span></a>
-            <a href="#mySkills"><span (click)="changeLang.changeLink('#top'); closeMenu()" class="mobileLink">{{changeLang.language === 'eng' ? menuText[1].eng :
+            <a href="#mySkills"><span (click)="changeLang.changeLink(true); closeMenu()"
+                    class="mobileLink">{{changeLang.language === 'eng' ? menuText[1].eng :
                     menuText[1].ger}}</span></a>
-            <a href="#portfolio"><span (click)="changeLang.changeLink('#top'); closeMenu()" class="mobileLink">Portfolio</span></a>
-            <a href="#contact"><span (click)="changeLang.changeLink('#top'); closeMenu()" class="mobileLink">{{changeLang.language === 'eng' ? "Contact" :
+            <a href="#portfolio"><span (click)="changeLang.changeLink(true); closeMenu()"
+                    class="mobileLink">Portfolio</span></a>
+            <a href="#contact"><span (click)="changeLang.changeLink(true); closeMenu()"
+                    class="mobileLink">{{changeLang.language === 'eng' ? "Contact" :
                     "Kontakt"}}</span></a>
         </div>
     </div>

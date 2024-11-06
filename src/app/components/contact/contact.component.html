@@ -1,5 +1,5 @@
 <div class="bookmark" id="contact"></div>
-<div class="containerBackground bottom">
+<div class="containerBackground bottom mgTop">
     <div class="purpleLine"></div>
     <div class="contactContent">
         <span class="topTitle" data-aos="fade-right">{{changeLang.language === 'eng' ? contentText[0].eng :
@@ -20,11 +20,11 @@
                         placeholder="{{changeLang.language === 'eng' ? contentText[4].eng : contentText[4].ger}}"
                         required (blur)="inputName = !name.valid || !name.touched ? false : true; checkValidation()">
                     @if (!name.valid && name.touched) {
-                    <img class="inputCheck" src="./../../../assets/img/invalid.png">
+                    <img class="inputCheck" src="assets/img/invalid.png">
                     <span style="margin-top: -42px; color: red;">{{changeLang.language === 'eng' ? contentText[8].eng :
                         contentText[8].ger}}</span>
-                    } @else {
-                    <img class="inputCheck" src="./../../../assets/img/valid.png" data-aos="fade-left">
+                    } @else if (name.valid && name.touched) {
+                    <img class="inputCheck" src="assets/img/valid.png" data-aos="fade-left">
                     }
                     <input #email="ngModel" minlength="6" [(ngModel)]="contactData.email" type="email" id="email"
                         data-aos="fade-left" name="email"
@@ -32,11 +32,11 @@
                         required (blur)="inputEmail = !email.valid || !email.touched ? false : true; checkValidation()"
                         pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
                     @if (!email.valid && email.touched) {
-                    <img class="inputCheck" src="./../../../assets/img/invalid.png">
+                    <img class="inputCheck" src="assets/img/invalid.png">
                     <span style="margin-top: -42px; color: red;">{{changeLang.language === 'eng' ? contentText[9].eng :
                         contentText[9].ger}}</span>
-                    } @else {
-                    <img class="inputCheck" src="./../../../assets/img/valid.png" data-aos="fade-left">
+                    } @else if (email.valid && email.touched) {
+                    <img class="inputCheck" src="assets/img/valid.png" data-aos="fade-left">
                     }
                     <textarea #message="ngModel" minlength="5" [(ngModel)]="contactData.message" id="message"
                         data-aos="fade-left" name="message"
@@ -45,11 +45,11 @@
                         (blur)="inputMessage = !message.valid || !message.touched ? false : true; checkValidation()"></textarea>
                     @if (!message.valid && message.touched) {
 
-                    <img class="inputCheck" src="./../../../assets/img/invalid.png">
+                    <img class="inputCheck" src="assets/img/invalid.png">
                     <span style="margin-top: -42px; color: red;">{{changeLang.language === 'eng' ? contentText[10].eng :
                         contentText[10].ger}}</span>
-                    } @else {
-                    <img class="inputCheck" src="./../../../assets/img/valid.png" data-aos="fade-left">
+                    } @else if (message.valid && message.touched) {
+                    <img class="inputCheck" src="assets/img/valid.png" data-aos="fade-left">
                     }
                     <div class="policyLine">
                         <div (click)="changePolicy()"
@@ -58,12 +58,11 @@
                             @if (checkPolicy) {<p class="checked">&#10004;</p>}
                         </div>
                         @if (changeLang.language == "eng") {
-                        <span (click)="changeLang.changeLink('privacypolicy')" data-aos="fade-left">I've read
-                            the&nbsp;<a href="privacypolicy">privacy policy</a>&nbsp;and agree to the processing
+                        <span data-aos="fade-left">I've read
+                            the&nbsp;<a routerLink="/privacypolicy" (click)="changeLang.changeLink(false)">privacy policy</a>&nbsp;and agree to the processing
                             of my data as outlined.</span>
                         } @else {
-                        <span data-aos="fade-left">Ich habe die <a (click)="changeLang.changeLink('privacypolicy')"
-                                href="privacypolicy">&nbsp;Datenschutzerklärung&nbsp;</a> gelesen und stimme dieser mit
+                        <span data-aos="fade-left">Ich habe die <a routerLink="privacypolicy" (click)="changeLang.changeLink(false)">&nbsp;Datenschutzerklärung&nbsp;</a> gelesen und stimme dieser mit
                             meinen angegeben Daten zu.</span>
                         }
                     </div>

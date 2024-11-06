@@ -3,11 +3,12 @@ import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { LanguageService } from '../../language.service';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, RouterModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
@@ -83,7 +84,7 @@ export class ContactComponent {
     message: ""
   }
 
-  mailTest = true;
+  mailTest = false;
 
   post = {
     endPoint: 'https://www.becker-christian.de/sndml.php',
@@ -104,13 +105,12 @@ export class ContactComponent {
         .subscribe({
           next: (response) => {
             this.success = true;
-            console.log(this.success);
             ngForm.resetForm();
           },
           error: (error) => {
             console.error(error);
           },
-          complete: () => console.info('send post complete'),
+          complete: () => console.info(''),
         });
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest && this.checkPolicy) {
       ngForm.resetForm();
