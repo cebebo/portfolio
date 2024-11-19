@@ -54,6 +54,9 @@ p {
 
 .text {
     @include dFlex($fd: column, $ai: flex-end);
+    >span {
+        font-size: 20px;
+    }
 }
 
 .purpleLine {

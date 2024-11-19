@@ -38,7 +38,7 @@
     border-bottom-left-radius: 60%;
     border-bottom-right-radius: 40%;
     border: 4px solid $colorGreen;
-    @include freePlacing($l: 0, $t: 64px);
+    @include freePlacing($l: 0, $t: 40px);
     margin-right:16px;
 }
 
@@ -89,7 +89,7 @@ p {
 .details {
     @include dFlex($fd: column);
     margin-top: 32px;
-
+    width: 80%;
     >span {
         margin-bottom: 32px;
     }
@@ -108,11 +108,12 @@ p {
 .description {
     @include fontColor($weight: 400, $size: 16px, $liHi: 19.2px);
     color: white;
+    font-size: 20px;
 }
 
 .btnBox {
     width: 80%;
-    margin-top: 64px;
+    margin-top: 100px;
     @include dFlex($jc: space-around);
 }
 
@@ -190,6 +191,10 @@ p {
 
     .purpleLine {
         @include freePlacing($t: -210px, $l: 450px);
+    }
+
+    .btnBox {
+        margin-top: 150px;
     }
 }
 
@@ -279,6 +284,10 @@ p {
     .purpleLine {
         @include freePlacing($t: -220px, $l: 450px);
     }
+
+    .details {
+        width: 90%;
+    }
 }
 
 @media(max-width:500px) {
@@ -292,7 +301,7 @@ p {
 
     .btnBox {
         width: 100%;
-        margin-top: 120px;
+        margin-top: 220px;
     }
 
     .buttonPurple, .buttonBlue {
@@ -322,6 +331,10 @@ p {
 @media(max-width:439px) {
     .purpleDot {
         margin-right: -450px;
+    }
+
+    .btnBox {
+        margin-top: 250px;
     }
 }
 

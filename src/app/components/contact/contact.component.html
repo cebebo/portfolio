@@ -15,17 +15,19 @@
             </div>
             <div class="form">
                 <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+                    <p>{{changeLang.language === 'eng' ? contentText[4].eng : contentText[4].ger}}</p>
                     <input #name="ngModel" minlength="3" [(ngModel)]="contactData.name" type="text" id="name"
                         data-aos="fade-left" name="name"
                         placeholder="{{changeLang.language === 'eng' ? contentText[4].eng : contentText[4].ger}}"
                         required (blur)="inputName = !name.valid || !name.touched ? false : true; checkValidation()">
                     @if (!name.valid && name.touched) {
                     <img class="inputCheck" src="assets/img/invalid.png">
-                    <span style="margin-top: -42px; color: red;">{{changeLang.language === 'eng' ? contentText[8].eng :
+                    <span style="margin-top: -42px; color: red; font-size: 12px;">{{changeLang.language === 'eng' ? contentText[8].eng :
                         contentText[8].ger}}</span>
                     } @else if (name.valid && name.touched) {
                     <img class="inputCheck" src="assets/img/valid.png" data-aos="fade-left">
                     }
+                    <p>{{changeLang.language === 'eng' ? contentText[5].eng : contentText[5].ger}}</p>
                     <input #email="ngModel" minlength="6" [(ngModel)]="contactData.email" type="email" id="email"
                         data-aos="fade-left" name="email"
                         placeholder="{{changeLang.language === 'eng' ? contentText[5].eng : contentText[5].ger}}"
@@ -33,11 +35,12 @@
                         pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
                     @if (!email.valid && email.touched) {
                     <img class="inputCheck" src="assets/img/invalid.png">
-                    <span style="margin-top: -42px; color: red;">{{changeLang.language === 'eng' ? contentText[9].eng :
+                    <span style="margin-top: -42px; color: red; font-size: 12px;">{{changeLang.language === 'eng' ? contentText[9].eng :
                         contentText[9].ger}}</span>
                     } @else if (email.valid && email.touched) {
                     <img class="inputCheck" src="assets/img/valid.png" data-aos="fade-left">
                     }
+                    <p>{{changeLang.language === 'eng' ? contentText[6].eng : contentText[6].ger}}</p>
                     <textarea #message="ngModel" minlength="5" [(ngModel)]="contactData.message" id="message"
                         data-aos="fade-left" name="message"
                         placeholder="{{changeLang.language === 'eng' ? contentText[6].eng : contentText[6].ger}}"
@@ -46,7 +49,7 @@
                     @if (!message.valid && message.touched) {
 
                     <img class="inputCheck" src="assets/img/invalid.png">
-                    <span style="margin-top: -42px; color: red;">{{changeLang.language === 'eng' ? contentText[10].eng :
+                    <span style="margin-top: -42px; color: red; font-size: 12px;">{{changeLang.language === 'eng' ? contentText[10].eng :
                         contentText[10].ger}}</span>
                     } @else if (message.valid && message.touched) {
                     <img class="inputCheck" src="assets/img/valid.png" data-aos="fade-left">

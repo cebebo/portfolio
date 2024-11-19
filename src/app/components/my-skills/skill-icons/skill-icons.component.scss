@@ -22,8 +22,7 @@
     align-items: flex-end;
     transition: transform .25s ease-in-out;
     &:hover {
-        transform: translateY(-20px);
-        cursor: pointer;
+        transform: translateY(-10px);
     }
     >img {
         height: 60px;

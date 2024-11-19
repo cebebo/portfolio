@@ -73,7 +73,7 @@ footer {
 
 @media(max-width:1000px) {
     footer {
-        margin-top: 450px !important;
+        margin-top: 600px !important;
     }
 
     .footerContent {
@@ -92,9 +92,9 @@ footer {
     }
 }
 
-@media(max-width:600px) {
+@media(max-width:650px) {
     footer {
-        margin-top: 600px !important;
+        margin-top: 700px !important;
     }
 }
 
@@ -110,6 +110,12 @@ footer {
         >span {
             font-size: 18px;
         }
+    }
+}
+
+@media (max-width:420px) {
+    footer {
+        margin-top: 900px !important;
     }
 }
 

@@ -16,6 +16,7 @@
 .rightSide {
     @include dFlex();
     >img {
+        margin-top: 200px;
         height: 450px;
         border-radius: 50%;
         border: 4px solid $colorGreen;
@@ -33,7 +34,7 @@
     background-color: $colorGreen;
     margin-right: 32px;
     z-index: 4;
-    @include freePlacing($t: -340px, $l: 1135px);
+    @include freePlacing($t: -260px, $l: 1135px);
 }
 
 .dotBack {
@@ -46,11 +47,21 @@
     margin-right: -200px;
 }
 
+.headLine {
+    color:white; 
+    margin-top:64px; 
+    width:90%; 
+    font-size: 20px;
+}
+
 .topics {
     margin-top: 24px;
-    width: 95%;
+    width: 90%;
     @include dFlex($jc: flex-start);
     color: white;
+    >span {
+        font-size: 20px;
+    }
 }
 
 .icon {
