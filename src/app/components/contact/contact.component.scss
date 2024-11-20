@@ -13,7 +13,7 @@
 
 .purpleLine {
     width: 1800px;
-    height: 5px;
+    height: 0px;
     background-color: $colorPurple;
     margin-right: 32px;
     z-index: 4;
@@ -39,6 +39,7 @@ form {
     >span {
         font-size: 20px;
         padding-right: 64px;
+        line-height: 30px;
     }
     ::placeholder {
         color: rgba(255,255,255,0.6);
@@ -97,10 +98,6 @@ input.ng-dirty.ng-touched.ng-invalid {
 
 input.ng-valid {
     border: 1px solid $colorGreen;
-}
-
-.bottom {
-    height: 50vh !important;
 }
 
 .inputCheck {

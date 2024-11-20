@@ -34,7 +34,7 @@
     background-color: $colorGreen;
     margin-right: 32px;
     z-index: 4;
-    @include freePlacing($t: -260px, $l: 1135px);
+    @include freePlacing($t: -320px, $l: 1135px);
 }
 
 .dotBack {

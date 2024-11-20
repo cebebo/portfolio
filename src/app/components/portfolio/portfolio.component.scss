@@ -57,7 +57,7 @@
     background-color: $colorPurple;
     margin-right: 32px;
     z-index: 4;
-    @include freePlacing($t: -210px, $l: 450px);
+    @include freePlacing($t: -245px, $l: 450px);
 }
 
 
@@ -83,7 +83,7 @@ p {
     margin-block-start: 0;
     margin-block-end: 0;
     margin-bottom: 48px;
-    @include fontColor($weight: 400, $size: 16px, $liHi: 19.2px)
+    @include fontColor($weight: 400, $size: 16px, $liHi: 30px)
 }
 
 .details {
@@ -92,6 +92,7 @@ p {
     width: 80%;
     >span {
         margin-bottom: 32px;
+        line-height: 30px;
     }
 }
 
