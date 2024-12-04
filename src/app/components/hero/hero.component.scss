@@ -95,7 +95,7 @@ h2 {
 .btnBox {
     height: 100px;
     margin-top: 50px;
-    @include dFlex($ai: flex-start);
+    @include dFlex($jc: flex-start, $fd: column);
 }
 
 .socialIcons {
@@ -136,6 +136,15 @@ h2 {
     left: 700px;
     width: 28px;
     animation: bouncing 1.5s ease-in-out alternate infinite;
+}
+
+.videoIcon {
+    height: 64px;   
+    margin-top: 32px; 
+    &:hover {
+        cursor: pointer;
+        filter: drop-shadow(0 0 0.75rem crimson);
+    }   
 }
 
 @keyframes bouncing {
@@ -378,7 +387,7 @@ h2 {
     }
 
     .socialIcons {
-        top: -570px;
+        top: -520px;
         left: -150px;
     }
 
@@ -457,7 +466,7 @@ h2 {
     }
 
     .socialIcons {
-        top: -350px;
+        top: -290px;
         left: 0;
     }
 

@@ -13,6 +13,7 @@ export class LanguageService {
    }
 
    popup = false;
+   video = false;
   
 changeLink(val:boolean) {
   this.backupLink = val;

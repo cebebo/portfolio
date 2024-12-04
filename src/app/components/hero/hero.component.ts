@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { LanguageService } from '../../language.service';
+import { VideoComponent } from './video/video.component';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, VideoComponent],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss'
 })

@@ -20,6 +20,7 @@
             <div class="btnBox">
                 <a href="#contact"><button class="btnPlace">{{changeLang.language === 'eng' ? contentText[2].eng :
                         contentText[2].ger}}</button></a>
+                <img class="videoIcon" src="assets/icons/video.png" (click)="changeLang.video = true">
             </div>
         </div>
     </div>
@@ -32,4 +33,5 @@
         <a href="mailto:mail@becker-christian.de"><span class="navLink emailAdress">mail&#64;becker-christian.de</span></a>
     </div>
     <img src="assets/img/scroll-down.png" class="scrollDown">
+    @if (changeLang.video){<app-video (click)="changeLang.video = false"></app-video>}
 </div>
