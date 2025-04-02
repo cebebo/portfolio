@@ -21,7 +21,7 @@ export class SkillIconsComponent {
   popup = false;
 
   checkAndExecute(name: string, n: number) {
-    if (name === 'Continually learning') {
+    if (name === 'Currently learning') {
       if (n == 1) {
         this.popup = true;
       } else {

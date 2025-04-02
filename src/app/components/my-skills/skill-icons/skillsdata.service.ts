@@ -49,7 +49,7 @@ export class Skillsdataservice {
       img: "icon-matdes.png"
     },
     {
-      name: "Continually learning",
+      name: "Currently learning",
       img: "icon-learn.png"
     }
   ];
